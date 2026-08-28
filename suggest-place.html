@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Suggest a Gym Spot | Best Gym Spots</title>
+    <title>Best Gym Spots | Intramuros</title>
 
     <style>
 
@@ -22,9 +23,10 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #090909;
-            color: #ffffff;
+            color: white;
             line-height: 1.6;
         }
+
 
         /* =========================
            NAVIGATION
@@ -42,6 +44,7 @@
             padding: 18px 7%;
 
             background: rgba(9, 9, 9, 0.97);
+
             border-bottom: 1px solid #292929;
 
             backdrop-filter: blur(10px);
@@ -51,7 +54,6 @@
             font-size: 25px;
             font-weight: 900;
             letter-spacing: 1px;
-            white-space: nowrap;
         }
 
         .logo span {
@@ -61,7 +63,8 @@
         nav ul {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 28px;
+
             list-style: none;
         }
 
@@ -69,6 +72,7 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+
             transition: 0.3s;
         }
 
@@ -76,46 +80,23 @@
             color: #a8e600;
         }
 
-        /* SUGGEST BUTTON */
-
-        .suggest-btn {
-            background: #a8e600;
-            color: #080808 !important;
-
-            padding: 11px 18px;
-
-            border-radius: 8px;
-
-            font-weight: 900;
-
-            transition: 0.3s;
-        }
-
-        .suggest-btn:hover {
-            background: #c0ff29;
-            color: #080808 !important;
-            transform: translateY(-2px);
-        }
 
         /* =========================
            HERO
         ========================= */
 
         .hero {
-            position: relative;
             min-height: 430px;
 
             display: flex;
             align-items: center;
 
-            overflow: hidden;
-
             background:
                 linear-gradient(
                     90deg,
-                    rgba(0, 0, 0, 0.95) 0%,
-                    rgba(0, 0, 0, 0.75) 50%,
-                    rgba(0, 0, 0, 0.35) 100%
+                    rgba(0,0,0,.95),
+                    rgba(0,0,0,.65),
+                    rgba(0,0,0,.25)
                 ),
                 url("gb-botanica-gym-link-spaces-slough-1024x68.jpg");
 
@@ -126,32 +107,32 @@
         .hero-content {
             width: 100%;
             max-width: 1100px;
+
             margin: auto;
-            padding: 80px 30px;
+
+            padding: 70px 30px;
         }
 
         .hero small {
-            display: inline-block;
-
-            margin-bottom: 15px;
-
             color: #a8e600;
 
             font-weight: bold;
+
             letter-spacing: 3px;
+
             text-transform: uppercase;
         }
 
         .hero h1 {
-            max-width: 700px;
+            max-width: 750px;
 
-            font-size: clamp(48px, 7vw, 82px);
+            margin: 15px 0;
 
-            line-height: 0.95;
+            font-size: clamp(48px, 7vw, 80px);
+
+            line-height: .95;
 
             text-transform: uppercase;
-
-            margin-bottom: 25px;
         }
 
         .hero h1 span {
@@ -161,32 +142,203 @@
         .hero p {
             max-width: 600px;
 
-            color: #dddddd;
+            color: #ddd;
 
-            font-size: 19px;
+            font-size: 18px;
         }
+
 
         /* =========================
            MAIN
         ========================= */
 
         main {
-            width: 100%;
-            max-width: 1050px;
+            max-width: 1100px;
 
-            margin: -55px auto 0;
+            margin: auto;
 
-            padding: 0 25px 80px;
-
-            position: relative;
-            z-index: 2;
+            padding: 70px 25px;
         }
 
+
         /* =========================
-           FORM
+           SECTION TITLE
         ========================= */
 
-        .form-container {
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+
+            text-transform: uppercase;
+        }
+
+        .section-title h2 span {
+            color: #a8e600;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+
+            color: #999;
+        }
+
+        .line {
+            width: 70px;
+            height: 4px;
+
+            margin: 18px auto;
+
+            background: #a8e600;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           GYM CARDS
+        ========================= */
+
+        .gym-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-bottom: 90px;
+        }
+
+        .gym-card {
+            background: #151515;
+
+            border: 1px solid #303030;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition: .3s;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.35);
+        }
+
+        .gym-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #a8e600;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.55);
+        }
+
+        .gym-image {
+            height: 210px;
+
+            overflow: hidden;
+        }
+
+        .gym-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: .5s;
+        }
+
+        .gym-card:hover .gym-image img {
+            transform: scale(1.07);
+        }
+
+        .gym-content {
+            padding: 25px;
+        }
+
+        .gym-number {
+            color: #a8e600;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .gym-content h3 {
+            font-size: 24px;
+
+            margin: 7px 0 12px;
+        }
+
+        .gym-content p {
+            color: #aaa;
+
+            font-size: 14px;
+
+            min-height: 75px;
+        }
+
+        .address {
+            margin: 18px 0;
+
+            padding: 12px;
+
+            background: #0d0d0d;
+
+            border-left: 3px solid #a8e600;
+
+            color: #ddd;
+
+            font-size: 14px;
+        }
+
+        .location-btn {
+            display: block;
+
+            width: 100%;
+
+            padding: 13px;
+
+            background: #a8e600;
+
+            color: #080808;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: 900;
+
+            transition: .3s;
+        }
+
+        .location-btn:hover {
+            background: #c3ff35;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SUGGEST SECTION
+        ========================= */
+
+        .suggest-section {
+            position: relative;
+
             background: #151515;
 
             border: 1px solid #333;
@@ -195,54 +347,64 @@
 
             padding: 45px;
 
+            overflow: hidden;
+
             box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.6);
+                0 25px 70px rgba(0,0,0,.5);
         }
 
-        .form-heading {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        .suggest-section::before {
+            content: "";
 
-        .form-heading h2 {
-            font-size: 34px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
+            position: absolute;
 
-        .form-heading h2 span {
-            color: #a8e600;
-        }
+            width: 220px;
+            height: 220px;
 
-        .form-heading p {
-            color: #999999;
-        }
-
-        .line {
-            width: 70px;
-            height: 4px;
-
-            margin: 18px auto 0;
+            right: -80px;
+            top: -80px;
 
             background: #a8e600;
 
-            border-radius: 10px;
+            opacity: .08;
+
+            border-radius: 50%;
         }
 
+        .suggest-title {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .suggest-title h2 {
+            font-size: 35px;
+
+            text-transform: uppercase;
+        }
+
+        .suggest-title h2 span {
+            color: #a8e600;
+        }
+
+        .suggest-title p {
+            color: #999;
+        }
+
+
         /* =========================
-           INPUTS
+           FORM
         ========================= */
 
         .input-group {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .input-group > label {
             display: block;
 
-            margin-bottom: 10px;
+            margin-bottom: 8px;
 
-            font-size: 18px;
             font-weight: bold;
         }
 
@@ -250,19 +412,19 @@
         input[type="email"] {
             width: 100%;
 
-            padding: 16px 18px;
+            padding: 15px;
 
-            background: #0d0d0d;
+            background: #0b0b0b;
 
             color: white;
 
             border: 1px solid #3b3b3b;
 
-            border-radius: 10px;
+            border-radius: 9px;
 
             font-size: 16px;
 
-            transition: 0.3s;
+            transition: .3s;
         }
 
         input[type="text"]:focus,
@@ -272,12 +434,9 @@
             border-color: #a8e600;
 
             box-shadow:
-                0 0 0 3px rgba(168, 230, 0, 0.08);
+                0 0 0 3px rgba(168,230,0,.08);
         }
 
-        input::placeholder {
-            color: #777;
-        }
 
         /* =========================
            FIELDSETS
@@ -286,42 +445,35 @@
         fieldset {
             border: 1px solid #333;
 
-            border-radius: 15px;
+            border-radius: 13px;
 
-            padding: 25px;
+            padding: 22px;
 
-            margin-bottom: 30px;
+            margin-bottom: 25px;
 
             background: #101010;
         }
 
         legend {
-            padding: 0 12px;
+            padding: 0 10px;
 
             color: #a8e600;
 
-            font-size: 19px;
-
-            font-weight: 800;
+            font-weight: bold;
 
             text-transform: uppercase;
         }
 
-        /* =========================
-           RADIO / CHECKBOX
-        ========================= */
-
         .choice {
             display: flex;
+
             align-items: center;
 
-            padding: 13px 15px;
+            padding: 10px;
 
-            margin: 7px 0;
+            border-radius: 8px;
 
-            border-radius: 9px;
-
-            transition: 0.25s;
+            transition: .2s;
         }
 
         .choice:hover {
@@ -329,13 +481,11 @@
         }
 
         .choice label {
-            margin-left: 12px;
-
-            color: #eeeeee;
+            margin-left: 10px;
 
             cursor: pointer;
 
-            font-weight: normal;
+            color: #ddd;
         }
 
         input[type="radio"],
@@ -348,82 +498,15 @@
             cursor: pointer;
         }
 
-        /* =========================
-           IMAGE CARDS
-        ========================= */
-
-        .image-card {
-            position: relative;
-
-            width: 100%;
-            height: 230px;
-
-            margin-bottom: 30px;
-
-            overflow: hidden;
-
-            border-radius: 15px;
-
-            border: 1px solid #333;
-        }
-
-        .image-card img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-            transition: transform 0.5s;
-        }
-
-        .image-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .image-card::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0, 0, 0, 0.8),
-                    rgba(0, 0, 0, 0.15)
-                );
-        }
-
-        .image-text {
-            position: absolute;
-
-            z-index: 2;
-
-            left: 25px;
-            bottom: 22px;
-        }
-
-        .image-text h3 {
-            font-size: 24px;
-            text-transform: uppercase;
-        }
-
-        .image-text p {
-            color: #dddddd;
-            font-size: 14px;
-        }
 
         /* =========================
-           SUBMIT BUTTON
+           SUBMIT
         ========================= */
 
         button {
             width: 100%;
 
-            padding: 17px;
+            padding: 16px;
 
             background: #a8e600;
 
@@ -431,9 +514,9 @@
 
             border: none;
 
-            border-radius: 10px;
+            border-radius: 9px;
 
-            font-size: 17px;
+            font-size: 16px;
 
             font-weight: 900;
 
@@ -443,21 +526,18 @@
 
             cursor: pointer;
 
-            transition: 0.3s;
+            transition: .3s;
         }
 
         button:hover {
-            background: #c0ff29;
+            background: #c3ff35;
 
             transform: translateY(-2px);
 
             box-shadow:
-                0 10px 25px rgba(168, 230, 0, 0.18);
+                0 10px 30px rgba(168,230,0,.18);
         }
 
-        button:active {
-            transform: translateY(0);
-        }
 
         /* =========================
            FOOTER
@@ -475,23 +555,16 @@
             border-top: 1px solid #222;
         }
 
-        .footer-logo {
+        footer strong {
             color: white;
 
-            font-size: 24px;
-
-            font-weight: 900;
-
-            margin-bottom: 8px;
+            font-size: 22px;
         }
 
-        .footer-logo span {
+        footer span {
             color: #a8e600;
         }
 
-        footer p {
-            margin: 5px;
-        }
 
         /* =========================
            MOBILE
@@ -500,60 +573,35 @@
         @media (max-width: 850px) {
 
             header {
-                padding: 18px 25px;
-            }
-
-            nav ul {
-                gap: 15px;
-            }
-
-            .suggest-btn {
-                padding: 9px 12px;
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            header {
                 flex-direction: column;
-                gap: 18px;
+
+                gap: 15px;
             }
 
             nav ul {
                 flex-wrap: wrap;
+
                 justify-content: center;
+
+                gap: 18px;
             }
 
-            .hero {
-                min-height: 390px;
+            .gym-grid {
+                grid-template-columns: 1fr;
             }
 
-            .hero-content {
-                padding: 70px 25px;
+            .gym-card {
+                max-width: 550px;
+
+                width: 100%;
+
+                margin: auto;
             }
 
-            .hero h1 {
-                font-size: 48px;
+            .suggest-section {
+                padding: 28px 20px;
             }
 
-            main {
-                margin-top: -30px;
-
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-
-            .form-container {
-                padding: 25px 18px;
-            }
-
-            .form-heading h2 {
-                font-size: 27px;
-            }
-
-            .image-card {
-                height: 190px;
-            }
         }
 
     </style>
@@ -579,20 +627,20 @@
         <ul>
 
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.html">
+                    Home
+                </a>
             </li>
 
             <li>
-                <a href="about.html">About</a>
+                <a href="about.html">
+                    About
+                </a>
             </li>
 
             <li>
-                <a href="contact.html">Contact</a>
-            </li>
-
-            <li>
-                <a href="suggest-place.html" class="suggest-btn">
-                    Suggest a Gym Spot
+                <a href="contact.html">
+                    Contact
                 </a>
             </li>
 
@@ -612,18 +660,18 @@
     <div class="hero-content">
 
         <small>
-            Best Gym Spots • Intramuros
+            Intramuros Fitness Guide
         </small>
 
         <h1>
-            Suggest a
+            Find Your
             <span>Gym Spot</span>
         </h1>
 
         <p>
-            Know a great gym or fitness spot around
-            Intramuros? Help us build a better guide
-            by recommending a place worth checking out.
+            Discover gyms and fitness facilities around
+            Intramuros that you can check out for your
+            next workout.
         </p>
 
     </div>
@@ -637,20 +685,192 @@
 
 <main>
 
-    <div class="form-container">
 
-        <div class="form-heading">
+    <div class="section-title">
+
+        <h2>
+            Our <span>Gym Picks</span>
+        </h2>
+
+        <div class="line"></div>
+
+        <p>
+            Three fitness spots around Intramuros worth checking out.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         THREE GYMS
+    ========================= -->
+
+    <div class="gym-grid">
+
+
+        <!-- GYM 1 -->
+
+        <article class="gym-card">
+
+            <div class="gym-image">
+
+                <img
+                    src="gb-botanica-gym-link-spaces-slough-1024x68.jpg"
+                    alt="Gym workout area"
+                >
+
+            </div>
+
+            <div class="gym-content">
+
+                <div class="gym-number">
+                    Gym Spot 01
+                </div>
+
+                <h3>
+                    Anda Fitness Gym
+                </h3>
+
+                <p>
+                    A fitness spot located inside Intramuros,
+                    making it a convenient option for students
+                    and residents looking for a place to train.
+                </p>
+
+                <div class="address">
+                    📍 La Maja Building, 459 Legaspi St.,
+                    Intramuros, Manila
+                </div>
+
+                <a
+                    class="location-btn"
+                    href="https://www.google.com/maps/search/?api=1&query=Anda+Fitness+Gym+459+Legaspi+Street+Intramuros+Manila"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📍 View Location
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- GYM 2 -->
+
+        <article class="gym-card">
+
+            <div class="gym-image">
+
+                <img
+                    src="tips-for-home-gym-design-fostering-physical-fitness.jpg"
+                    alt="Gym equipment"
+                >
+
+            </div>
+
+            <div class="gym-content">
+
+                <div class="gym-number">
+                    Gym Spot 02
+                </div>
+
+                <h3>
+                    Manila Bulletin Gym
+                </h3>
+
+                <p>
+                    A gym facility located along Muralla Street
+                    inside the historic Intramuros area.
+                </p>
+
+                <div class="address">
+                    📍 Muralla Street corner Recoletos Street,
+                    Intramuros, Manila
+                </div>
+
+                <a
+                    class="location-btn"
+                    href="https://www.google.com/maps/search/?api=1&query=Manila+Bulletin+Gym+Muralla+Street+corner+Recoletos+Street+Intramuros+Manila"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📍 View Location
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- GYM 3 -->
+
+        <article class="gym-card">
+
+            <div class="gym-image">
+
+                <img
+                    src="gb-botanica-gym-link-spaces-slough-1024x68.jpg"
+                    alt="Fitness training area"
+                >
+
+            </div>
+
+            <div class="gym-content">
+
+                <div class="gym-number">
+                    Gym Spot 03
+                </div>
+
+                <h3>
+                    Gymnastics Association of the Philippines
+                </h3>
+
+                <p>
+                    A sports and gymnastics facility located
+                    within the Intramuros area.
+                </p>
+
+                <div class="address">
+                    📍 630 Victoria Street, corner Basco Street,
+                    Intramuros, Manila
+                </div>
+
+                <a
+                    class="location-btn"
+                    href="https://www.google.com/maps/search/?api=1&query=Gymnastics+Association+of+the+Philippines+630+Victoria+Basco+Street+Intramuros+Manila"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📍 View Location
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <!-- =========================
+         SUGGEST A GYM
+         AT THE VERY BOTTOM
+    ========================= -->
+
+    <section class="suggest-section">
+
+        <div class="suggest-title">
 
             <h2>
-                Share a <span>Great Gym Spot</span>
+                Know Another <span>Gym Spot?</span>
             </h2>
 
-            <p>
-                Fill out the form below and help us
-                discover more fitness spots around Intramuros.
-            </p>
-
             <div class="line"></div>
+
+            <p>
+                Help us discover more fitness spots around Intramuros.
+            </p>
 
         </div>
 
@@ -663,7 +883,7 @@
             <div class="input-group">
 
                 <label for="place-name">
-                    Gym/Place Name
+                    Gym/Place Name:
                 </label>
 
                 <input
@@ -677,30 +897,6 @@
             </div>
 
 
-            <!-- BOTANICA IMAGE -->
-
-            <div class="image-card">
-
-                <img
-                    src="gb-botanica-gym-link-spaces-slough-1024x68.jpg"
-                    alt="Botanica gym"
-                >
-
-                <div class="image-text">
-
-                    <h3>
-                        Gym Inspiration
-                    </h3>
-
-                    <p>
-                        Recommend a place with a great fitness environment.
-                    </p>
-
-                </div>
-
-            </div>
-
-
             <!-- CATEGORY -->
 
             <fieldset>
@@ -708,6 +904,7 @@
                 <legend>
                     What type of gym spot is it?
                 </legend>
+
 
                 <div class="choice">
 
@@ -760,30 +957,6 @@
             </fieldset>
 
 
-            <!-- TIPS FOR HOME GYM IMAGE -->
-
-            <div class="image-card">
-
-                <img
-                    src="tips-for-home-gym-design-fostering-physical-fitness.jpg"
-                    alt="Home gym equipment"
-                >
-
-                <div class="image-text">
-
-                    <h3>
-                        What Makes a Good Gym?
-                    </h3>
-
-                    <p>
-                        Choose the features that make the place worth visiting.
-                    </p>
-
-                </div>
-
-            </div>
-
-
             <!-- GOOD POINTS -->
 
             <fieldset>
@@ -791,6 +964,7 @@
                 <legend>
                     What's good about this gym spot?
                 </legend>
+
 
                 <div class="choice">
 
@@ -842,12 +1016,12 @@
             </fieldset>
 
 
-            <!-- CONTACT EMAIL -->
+            <!-- EMAIL -->
 
             <div class="input-group">
 
                 <label for="email">
-                    Contact Email
+                    Contact Email:
                 </label>
 
                 <input
@@ -870,7 +1044,8 @@
 
         </form>
 
-    </div>
+    </section>
+
 
 </main>
 
@@ -881,9 +1056,9 @@
 
 <footer>
 
-    <div class="footer-logo">
+    <strong>
         BEST <span>GYM</span> SPOTS
-    </div>
+    </strong>
 
     <p>
         Your guide to gym and fitness spots around Intramuros.
