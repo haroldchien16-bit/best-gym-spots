@@ -15,10 +15,6 @@
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #0b0b0b;
@@ -26,35 +22,27 @@
             line-height: 1.6;
         }
 
-
-        /* =========================
-           NAVIGATION
-        ========================= */
+        /* NAVIGATION */
 
         header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             padding: 20px 7%;
 
-            background: rgba(11, 11, 11, 0.95);
+            background: #111;
             border-bottom: 1px solid #292929;
         }
 
         .logo {
             font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 1px;
+            font-weight: bold;
         }
 
         nav ul {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             list-style: none;
         }
 
@@ -62,7 +50,6 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
         }
 
         nav a:hover {
@@ -70,14 +57,12 @@
         }
 
 
-        /* =========================
-           MAIN
-        ========================= */
+        /* MAIN */
 
         main {
             max-width: 850px;
             margin: auto;
-            padding: 80px 25px;
+            padding: 70px 25px;
         }
 
         .page-title {
@@ -86,7 +71,7 @@
         }
 
         .page-title h1 {
-            font-size: 48px;
+            font-size: 45px;
             text-transform: uppercase;
             margin-bottom: 15px;
         }
@@ -97,22 +82,17 @@
         }
 
 
-        /* =========================
-           FORM CONTAINER
-        ========================= */
+        /* FORM */
 
         .form-container {
             background: #151515;
-            border: 1px solid #2d2d2d;
-            border-radius: 16px;
+
+            border: 1px solid #333;
+
+            border-radius: 15px;
+
             padding: 40px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
-
-
-        /* =========================
-           LABELS & INPUTS
-        ========================= */
 
         label {
             display: inline-block;
@@ -123,13 +103,16 @@
         input[type="text"],
         input[type="email"] {
             width: 100%;
+
             padding: 14px;
 
-            background: #0d0d0d;
+            background: #0b0b0b;
+
             color: white;
 
             border: 1px solid #444;
-            border-radius: 7px;
+
+            border-radius: 6px;
 
             font-size: 16px;
         }
@@ -141,25 +124,29 @@
         }
 
 
-        /* =========================
-           FIELDSETS
-        ========================= */
+        /* FIELDSETS */
 
         fieldset {
             border: 1px solid #333;
+
             border-radius: 10px;
+
             padding: 25px;
+
             margin-bottom: 25px;
         }
 
         legend {
             padding: 0 10px;
-            font-weight: bold;
+
             font-size: 18px;
+
+            font-weight: bold;
         }
 
         fieldset label {
             margin-left: 8px;
+
             font-weight: normal;
         }
 
@@ -169,9 +156,7 @@
         }
 
 
-        /* =========================
-           BUTTON
-        ========================= */
+        /* BUTTON */
 
         button {
             width: 100%;
@@ -179,33 +164,31 @@
             padding: 15px;
 
             background: white;
+
             color: black;
 
             border: none;
-            border-radius: 8px;
+
+            border-radius: 7px;
 
             font-size: 16px;
+
             font-weight: bold;
 
             cursor: pointer;
-
-            transition: 0.3s;
         }
 
         button:hover {
             background: #ccc;
-            transform: translateY(-2px);
         }
 
 
-        /* =========================
-           FOOTER
-        ========================= */
+        /* FOOTER */
 
         footer {
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 35px 20px;
 
             background: #050505;
 
@@ -215,9 +198,7 @@
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 700px) {
 
@@ -227,13 +208,8 @@
             }
 
             nav ul {
-                gap: 18px;
                 flex-wrap: wrap;
                 justify-content: center;
-            }
-
-            main {
-                padding: 50px 18px;
             }
 
             .page-title h1 {
@@ -254,9 +230,7 @@
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
 <header>
 
@@ -269,15 +243,21 @@
         <ul>
 
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.html">
+                    Home
+                </a>
             </li>
 
             <li>
-                <a href="about.html">About</a>
+                <a href="about.html">
+                    About
+                </a>
             </li>
 
             <li>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html">
+                    Contact
+                </a>
             </li>
 
         </ul>
@@ -288,9 +268,7 @@
 
 
 
-<!-- =========================
-     MAIN CONTENT
-========================= -->
+<!-- MAIN CONTENT -->
 
 <main>
 
@@ -385,7 +363,6 @@
             </fieldset>
 
 
-
             <!-- GOOD POINTS -->
 
             <fieldset>
@@ -439,8 +416,10 @@
             </fieldset>
 
 
+            <br>
 
-            <!-- EMAIL -->
+
+            <!-- CONTACT EMAIL -->
 
             <label for="email">
                 Contact Email:
@@ -472,9 +451,7 @@
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
