@@ -1,0 +1,139 @@
+<section>
+
+    <h2>Recommend a Gym Spot in Intramuros</h2>
+
+    <p>
+        Know a great gym or fitness spot around Intramuros?
+        Recommend it to be included in our guide!
+    </p>
+
+    <form>
+
+        <label for="place-name">
+            Gym/Place Name:
+        </label>
+
+        <input
+            type="text"
+            id="place-name"
+            name="place-name"
+            required
+        >
+
+        <br><br>
+
+        <fieldset>
+
+            <legend>
+                What type of gym spot is it?
+            </legend>
+
+            <input
+                type="radio"
+                id="gym"
+                name="category"
+                value="gym"
+                required
+            >
+
+            <label for="gym">
+                Gym
+            </label>
+
+            <br>
+
+            <input
+                type="radio"
+                id="fitness-center"
+                name="category"
+                value="fitness-center"
+            >
+
+            <label for="fitness-center">
+                Fitness Center
+            </label>
+
+            <br>
+
+            <input
+                type="radio"
+                id="sports-facility"
+                name="category"
+                value="sports-training-facility"
+            >
+
+            <label for="sports-facility">
+                Sports/Training Facility
+            </label>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+
+            <legend>
+                What's good about this gym spot?
+            </legend>
+
+            <input
+                type="checkbox"
+                id="affordable"
+                name="good-points"
+                value="affordable"
+            >
+
+            <label for="affordable">
+                Affordable
+            </label>
+
+            <br>
+
+            <input
+                type="checkbox"
+                id="equipment"
+                name="good-points"
+                value="good-equipment"
+            >
+
+            <label for="equipment">
+                Good Equipment
+            </label>
+
+            <br>
+
+            <input
+                type="checkbox"
+                id="clean"
+                name="good-points"
+                value="clean-facilities"
+            >
+
+            <label for="clean">
+                Clean Facilities
+            </label>
+
+        </fieldset>
+
+        <br>
+
+        <label for="email">
+            Contact Email:
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Recommend Gym Spot
+        </button>
+
+    </form>
+
+</section>
