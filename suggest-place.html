@@ -15,88 +15,220 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0b0b0b;
-            color: white;
+            background: #090909;
+            color: #ffffff;
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            padding: 20px 7%;
+            padding: 18px 7%;
 
-            background: #111;
-            border-bottom: 1px solid #292929;
+            background: rgba(9, 9, 9, 0.96);
+            border-bottom: 1px solid #252525;
+
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #a8e600;
         }
 
         nav ul {
             display: flex;
-            gap: 25px;
+            align-items: center;
+            gap: 28px;
+
             list-style: none;
         }
 
         nav a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #aaa;
+            color: #a8e600;
         }
 
+        /* =========================
+           HERO
+        ========================= */
 
-        /* MAIN */
+        .hero {
+            position: relative;
+
+            min-height: 440px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.95) 0%,
+                    rgba(0, 0, 0, 0.75) 45%,
+                    rgba(0, 0, 0, 0.35) 100%
+                ),
+                url("gb-botanica-gym-link-spaces-slough-1024x68.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 80px 30px;
+        }
+
+        .hero small {
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            color: #a8e600;
+
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 650px;
+
+            font-size: clamp(48px, 7vw, 82px);
+
+            line-height: 0.95;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #a8e600;
+        }
+
+        .hero p {
+            max-width: 600px;
+
+            color: #dddddd;
+
+            font-size: 19px;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
 
         main {
-            max-width: 850px;
-            margin: auto;
-            padding: 70px 25px;
+            width: 100%;
+            max-width: 1050px;
+
+            margin: -55px auto 0;
+
+            padding: 0 25px 80px;
+
+            position: relative;
+            z-index: 2;
         }
 
-        .page-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .page-title h1 {
-            font-size: 45px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .page-title p {
-            color: #aaa;
-            font-size: 18px;
-        }
-
-
-        /* FORM */
+        /* =========================
+           FORM CONTAINER
+        ========================= */
 
         .form-container {
             background: #151515;
 
             border: 1px solid #333;
 
-            border-radius: 15px;
+            border-radius: 20px;
 
-            padding: 40px;
+            padding: 45px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.6);
         }
 
-        label {
-            display: inline-block;
+        .form-heading {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .form-heading h2 {
+            font-size: 34px;
+
+            text-transform: uppercase;
+
             margin-bottom: 8px;
+        }
+
+        .form-heading h2 span {
+            color: #a8e600;
+        }
+
+        .form-heading p {
+            color: #999999;
+        }
+
+        .form-heading .line {
+            width: 70px;
+            height: 4px;
+
+            margin: 18px auto 0;
+
+            background: #a8e600;
+
+            border-radius: 10px;
+        }
+
+        /* =========================
+           INPUTS
+        ========================= */
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-group > label {
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 18px;
+
             font-weight: bold;
         }
 
@@ -104,120 +236,300 @@
         input[type="email"] {
             width: 100%;
 
-            padding: 14px;
+            padding: 16px 18px;
 
-            background: #0b0b0b;
+            background: #0d0d0d;
 
-            color: white;
+            color: #ffffff;
 
-            border: 1px solid #444;
+            border: 1px solid #3b3b3b;
 
-            border-radius: 6px;
+            border-radius: 10px;
 
             font-size: 16px;
+
+            transition: 0.3s;
         }
 
         input[type="text"]:focus,
         input[type="email"]:focus {
             outline: none;
-            border-color: white;
+
+            border-color: #a8e600;
+
+            box-shadow: 0 0 0 3px rgba(168, 230, 0, 0.08);
         }
 
+        input::placeholder {
+            color: #777777;
+        }
 
-        /* FIELDSETS */
+        /* =========================
+           FIELDSETS
+        ========================= */
 
         fieldset {
-            border: 1px solid #333;
+            border: 1px solid #333333;
 
-            border-radius: 10px;
+            border-radius: 15px;
 
             padding: 25px;
 
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+
+            background: #101010;
         }
 
         legend {
-            padding: 0 10px;
+            padding: 0 12px;
 
-            font-size: 18px;
+            color: #a8e600;
 
-            font-weight: bold;
+            font-size: 19px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
         }
 
-        fieldset label {
-            margin-left: 8px;
+        /* =========================
+           CHOICE ROWS
+        ========================= */
+
+        .choice {
+            display: flex;
+            align-items: center;
+
+            padding: 13px 15px;
+
+            margin: 7px 0;
+
+            border-radius: 9px;
+
+            transition: 0.25s;
+        }
+
+        .choice:hover {
+            background: #1d1d1d;
+        }
+
+        .choice label {
+            margin-left: 12px;
+
+            color: #eeeeee;
+
+            cursor: pointer;
 
             font-weight: normal;
         }
 
         input[type="radio"],
         input[type="checkbox"] {
-            accent-color: white;
-        }
+            width: 18px;
+            height: 18px;
 
-
-        /* BUTTON */
-
-        button {
-            width: 100%;
-
-            padding: 15px;
-
-            background: white;
-
-            color: black;
-
-            border: none;
-
-            border-radius: 7px;
-
-            font-size: 16px;
-
-            font-weight: bold;
+            accent-color: #a8e600;
 
             cursor: pointer;
         }
 
-        button:hover {
-            background: #ccc;
+        /* =========================
+           IMAGE CARDS
+        ========================= */
+
+        .image-card {
+            position: relative;
+
+            width: 100%;
+            height: 230px;
+
+            margin-bottom: 30px;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+
+            border: 1px solid #333333;
         }
 
+        .image-card img {
+            width: 100%;
+            height: 100%;
 
-        /* FOOTER */
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .image-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.75),
+                    rgba(0, 0, 0, 0.05)
+                );
+        }
+
+        .image-text {
+            position: absolute;
+
+            z-index: 2;
+
+            left: 25px;
+            bottom: 22px;
+        }
+
+        .image-text h3 {
+            font-size: 24px;
+
+            text-transform: uppercase;
+        }
+
+        .image-text p {
+            color: #dddddd;
+            font-size: 14px;
+        }
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
+
+        button {
+            width: 100%;
+
+            padding: 17px;
+
+            background: #a8e600;
+
+            color: #080808;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #c0ff29;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px rgba(168, 230, 0, 0.18);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
 
-            padding: 35px 20px;
+            padding: 45px 20px;
 
             background: #050505;
 
-            color: #777;
+            color: #777777;
 
-            border-top: 1px solid #222;
+            border-top: 1px solid #222222;
         }
 
+        footer .footer-logo {
+            color: #ffffff;
 
-        /* MOBILE */
+            font-size: 24px;
 
-        @media (max-width: 700px) {
+            font-weight: 900;
+
+            margin-bottom: 8px;
+        }
+
+        footer .footer-logo span {
+            color: #a8e600;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
 
             header {
                 flex-direction: column;
+
                 gap: 15px;
+
+                padding: 18px 20px;
             }
 
             nav ul {
+                gap: 16px;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
             }
 
-            .page-title h1 {
-                font-size: 34px;
+            .hero {
+                min-height: 390px;
+            }
+
+            .hero-content {
+                padding: 70px 25px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            main {
+                margin-top: -30px;
+
+                padding-left: 15px;
+                padding-right: 15px;
             }
 
             .form-container {
-                padding: 25px;
+                padding: 25px 18px;
+            }
+
+            .form-heading h2 {
+                font-size: 27px;
+            }
+
+            .image-card {
+                height: 190px;
             }
 
         }
@@ -230,12 +542,14 @@
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <header>
 
     <div class="logo">
-        BEST GYM SPOTS
+        BEST <span>GYM</span> SPOTS
     </div>
 
     <nav>
@@ -267,49 +581,111 @@
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
 
-<!-- MAIN CONTENT -->
+<section class="hero">
 
-<main>
+    <div class="hero-content">
 
-    <div class="page-title">
+        <small>
+            Best Gym Spots • Intramuros
+        </small>
 
         <h1>
-            Suggest a Gym Spot
+            Suggest a
+            <span>Gym Spot</span>
         </h1>
 
         <p>
             Know a great gym or fitness spot around
-            Intramuros? Recommend it to be included
-            in our guide!
+            Intramuros? Help us build a better guide
+            by recommending a place worth checking out.
         </p>
 
     </div>
 
+</section>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
 
     <div class="form-container">
+
+        <div class="form-heading">
+
+            <h2>
+                Share a <span>Great Gym Spot</span>
+            </h2>
+
+            <p>
+                Fill out the form below and help us
+                discover more fitness spots around Intramuros.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
 
         <form>
 
 
-            <!-- PLACE NAME -->
+            <!-- =========================
+                 PLACE NAME
+            ========================= -->
 
-            <label for="place-name">
-                Gym/Place Name:
-            </label>
+            <div class="input-group">
 
-            <input
-                type="text"
-                id="place-name"
-                name="place-name"
-                required
-            >
+                <label for="place-name">
+                    Gym/Place Name
+                </label>
+
+                <input
+                    type="text"
+                    id="place-name"
+                    name="place-name"
+                    placeholder="Enter gym or place name"
+                    required
+                >
+
+            </div>
 
 
-            <br><br>
+            <!-- =========================
+                 BOTANICA IMAGE
+            ========================= -->
+
+            <div class="image-card">
+
+                <img
+                    src="gb-botanica-gym-link-spaces-slough-1024x68.jpg"
+                    alt="Botanica gym"
+                >
+
+                <div class="image-text">
+
+                    <h3>
+                        Gym Inspiration
+                    </h3>
+
+                    <p>
+                        Recommend a place with a great fitness environment.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-            <!-- CATEGORY -->
+            <!-- =========================
+                 CATEGORY
+            ========================= -->
 
             <fieldset>
 
@@ -318,52 +694,86 @@
                 </legend>
 
 
-                <input
-                    type="radio"
-                    id="gym"
-                    name="category"
-                    value="gym"
-                    required
-                >
+                <div class="choice">
 
-                <label for="gym">
-                    Gym
-                </label>
+                    <input
+                        type="radio"
+                        id="gym"
+                        name="category"
+                        value="gym"
+                        required
+                    >
 
+                    <label for="gym">
+                        Gym
+                    </label>
 
-                <br>
-
-
-                <input
-                    type="radio"
-                    id="fitness-center"
-                    name="category"
-                    value="fitness-center"
-                >
-
-                <label for="fitness-center">
-                    Fitness Center
-                </label>
+                </div>
 
 
-                <br>
+                <div class="choice">
+
+                    <input
+                        type="radio"
+                        id="fitness-center"
+                        name="category"
+                        value="fitness-center"
+                    >
+
+                    <label for="fitness-center">
+                        Fitness Center
+                    </label>
+
+                </div>
 
 
-                <input
-                    type="radio"
-                    id="sports-facility"
-                    name="category"
-                    value="sports-training-facility"
-                >
+                <div class="choice">
 
-                <label for="sports-facility">
-                    Sports/Training Facility
-                </label>
+                    <input
+                        type="radio"
+                        id="sports-facility"
+                        name="category"
+                        value="sports-training-facility"
+                    >
+
+                    <label for="sports-facility">
+                        Sports/Training Facility
+                    </label>
+
+                </div>
 
             </fieldset>
 
 
-            <!-- GOOD POINTS -->
+            <!-- =========================
+                 TIPS IMAGE
+            ========================= -->
+
+            <div class="image-card">
+
+                <img
+                    src="tips-for-home-gym-design-fostering-physical-fitness.jpg"
+                    alt="Home gym equipment"
+                >
+
+                <div class="image-text">
+
+                    <h3>
+                        What Makes a Good Gym?
+                    </h3>
+
+                    <p>
+                        Choose the features that make the place worth visiting.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 GOOD POINTS
+            ========================= -->
 
             <fieldset>
 
@@ -372,71 +782,80 @@
                 </legend>
 
 
-                <input
-                    type="checkbox"
-                    id="affordable"
-                    name="good-points"
-                    value="affordable"
-                >
+                <div class="choice">
 
-                <label for="affordable">
-                    Affordable
-                </label>
+                    <input
+                        type="checkbox"
+                        id="affordable"
+                        name="good-points"
+                        value="affordable"
+                    >
 
+                    <label for="affordable">
+                        Affordable
+                    </label>
 
-                <br>
-
-
-                <input
-                    type="checkbox"
-                    id="equipment"
-                    name="good-points"
-                    value="good-equipment"
-                >
-
-                <label for="equipment">
-                    Good Equipment
-                </label>
+                </div>
 
 
-                <br>
+                <div class="choice">
+
+                    <input
+                        type="checkbox"
+                        id="equipment"
+                        name="good-points"
+                        value="good-equipment"
+                    >
+
+                    <label for="equipment">
+                        Good Equipment
+                    </label>
+
+                </div>
 
 
-                <input
-                    type="checkbox"
-                    id="clean"
-                    name="good-points"
-                    value="clean-facilities"
-                >
+                <div class="choice">
 
-                <label for="clean">
-                    Clean Facilities
-                </label>
+                    <input
+                        type="checkbox"
+                        id="clean"
+                        name="good-points"
+                        value="clean-facilities"
+                    >
+
+                    <label for="clean">
+                        Clean Facilities
+                    </label>
+
+                </div>
 
             </fieldset>
 
 
-            <br>
+            <!-- =========================
+                 EMAIL
+            ========================= -->
+
+            <div class="input-group">
+
+                <label for="email">
+                    Contact Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
 
 
-            <!-- CONTACT EMAIL -->
-
-            <label for="email">
-                Contact Email:
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                name="email"
-                required
-            >
-
-
-            <br><br>
-
-
-            <!-- SUBMIT -->
+            <!-- =========================
+                 SUBMIT
+            ========================= -->
 
             <button type="submit">
                 Recommend Gym Spot
@@ -450,17 +869,22 @@
 </main>
 
 
-
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    <p>
-        &copy; 2026 Best Gym Spots
-    </p>
+    <div class="footer-logo">
+        BEST <span>GYM</span> SPOTS
+    </div>
 
     <p>
         Your guide to gym and fitness spots around Intramuros.
+    </p>
+
+    <p>
+        &copy; 2026 Best Gym Spots. All rights reserved.
     </p>
 
 </footer>
