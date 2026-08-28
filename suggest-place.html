@@ -1,139 +1,494 @@
-<section>
+<!DOCTYPE html>
+<html lang="en">
 
-    <h2>Recommend a Gym Spot in Intramuros</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <p>
-        Know a great gym or fitness spot around Intramuros?
-        Recommend it to be included in our guide!
-    </p>
+    <title>Suggest a Gym Spot | Best Gym Spots</title>
 
-    <form>
+    <style>
 
-        <label for="place-name">
-            Gym/Place Name:
-        </label>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        <input
-            type="text"
-            id="place-name"
-            name="place-name"
-            required
-        >
+        html {
+            scroll-behavior: smooth;
+        }
 
-        <br><br>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
 
-        <fieldset>
 
-            <legend>
-                What type of gym spot is it?
-            </legend>
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 7%;
+
+            background: rgba(11, 11, 11, 0.95);
+            border-bottom: 1px solid #292929;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 850px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .page-title p {
+            color: #aaa;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           FORM CONTAINER
+        ========================= */
+
+        .form-container {
+            background: #151515;
+            border: 1px solid #2d2d2d;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* =========================
+           LABELS & INPUTS
+        ========================= */
+
+        label {
+            display: inline-block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 14px;
+
+            background: #0d0d0d;
+            color: white;
+
+            border: 1px solid #444;
+            border-radius: 7px;
+
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: white;
+        }
+
+
+        /* =========================
+           FIELDSETS
+        ========================= */
+
+        fieldset {
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        fieldset label {
+            margin-left: 8px;
+            font-weight: normal;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: white;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        button {
+            width: 100%;
+
+            padding: 15px;
+
+            background: white;
+            color: black;
+
+            border: none;
+            border-radius: 8px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ccc;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background: #050505;
+
+            color: #777;
+
+            border-top: 1px solid #222;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            main {
+                padding: 50px 18px;
+            }
+
+            .page-title h1 {
+                font-size: 34px;
+            }
+
+            .form-container {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <div class="logo">
+        BEST GYM SPOTS
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main>
+
+    <div class="page-title">
+
+        <h1>
+            Suggest a Gym Spot
+        </h1>
+
+        <p>
+            Know a great gym or fitness spot around
+            Intramuros? Recommend it to be included
+            in our guide!
+        </p>
+
+    </div>
+
+
+    <div class="form-container">
+
+        <form>
+
+
+            <!-- PLACE NAME -->
+
+            <label for="place-name">
+                Gym/Place Name:
+            </label>
 
             <input
-                type="radio"
-                id="gym"
-                name="category"
-                value="gym"
+                type="text"
+                id="place-name"
+                name="place-name"
                 required
             >
 
-            <label for="gym">
-                Gym
-            </label>
 
-            <br>
+            <br><br>
+
+
+            <!-- CATEGORY -->
+
+            <fieldset>
+
+                <legend>
+                    What type of gym spot is it?
+                </legend>
+
+
+                <input
+                    type="radio"
+                    id="gym"
+                    name="category"
+                    value="gym"
+                    required
+                >
+
+                <label for="gym">
+                    Gym
+                </label>
+
+
+                <br>
+
+
+                <input
+                    type="radio"
+                    id="fitness-center"
+                    name="category"
+                    value="fitness-center"
+                >
+
+                <label for="fitness-center">
+                    Fitness Center
+                </label>
+
+
+                <br>
+
+
+                <input
+                    type="radio"
+                    id="sports-facility"
+                    name="category"
+                    value="sports-training-facility"
+                >
+
+                <label for="sports-facility">
+                    Sports/Training Facility
+                </label>
+
+            </fieldset>
+
+
+
+            <!-- GOOD POINTS -->
+
+            <fieldset>
+
+                <legend>
+                    What's good about this gym spot?
+                </legend>
+
+
+                <input
+                    type="checkbox"
+                    id="affordable"
+                    name="good-points"
+                    value="affordable"
+                >
+
+                <label for="affordable">
+                    Affordable
+                </label>
+
+
+                <br>
+
+
+                <input
+                    type="checkbox"
+                    id="equipment"
+                    name="good-points"
+                    value="good-equipment"
+                >
+
+                <label for="equipment">
+                    Good Equipment
+                </label>
+
+
+                <br>
+
+
+                <input
+                    type="checkbox"
+                    id="clean"
+                    name="good-points"
+                    value="clean-facilities"
+                >
+
+                <label for="clean">
+                    Clean Facilities
+                </label>
+
+            </fieldset>
+
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+                Contact Email:
+            </label>
 
             <input
-                type="radio"
-                id="fitness-center"
-                name="category"
-                value="fitness-center"
+                type="email"
+                id="email"
+                name="email"
+                required
             >
 
-            <label for="fitness-center">
-                Fitness Center
-            </label>
 
-            <br>
+            <br><br>
 
-            <input
-                type="radio"
-                id="sports-facility"
-                name="category"
-                value="sports-training-facility"
-            >
 
-            <label for="sports-facility">
-                Sports/Training Facility
-            </label>
+            <!-- SUBMIT -->
 
-        </fieldset>
+            <button type="submit">
+                Recommend Gym Spot
+            </button>
 
-        <br>
 
-        <fieldset>
+        </form>
 
-            <legend>
-                What's good about this gym spot?
-            </legend>
+    </div>
 
-            <input
-                type="checkbox"
-                id="affordable"
-                name="good-points"
-                value="affordable"
-            >
+</main>
 
-            <label for="affordable">
-                Affordable
-            </label>
 
-            <br>
 
-            <input
-                type="checkbox"
-                id="equipment"
-                name="good-points"
-                value="good-equipment"
-            >
+<!-- =========================
+     FOOTER
+========================= -->
 
-            <label for="equipment">
-                Good Equipment
-            </label>
+<footer>
 
-            <br>
+    <p>
+        &copy; 2026 Best Gym Spots
+    </p>
 
-            <input
-                type="checkbox"
-                id="clean"
-                name="good-points"
-                value="clean-facilities"
-            >
+    <p>
+        Your guide to gym and fitness spots around Intramuros.
+    </p>
 
-            <label for="clean">
-                Clean Facilities
-            </label>
+</footer>
 
-        </fieldset>
 
-        <br>
+</body>
 
-        <label for="email">
-            Contact Email:
-        </label>
-
-        <input
-            type="email"
-            id="email"
-            name="email"
-            required
-        >
-
-        <br><br>
-
-        <button type="submit">
-            Recommend Gym Spot
-        </button>
-
-    </form>
-
-</section>
+</html>
