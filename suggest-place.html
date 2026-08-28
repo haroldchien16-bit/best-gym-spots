@@ -41,8 +41,8 @@
 
             padding: 18px 7%;
 
-            background: rgba(9, 9, 9, 0.96);
-            border-bottom: 1px solid #252525;
+            background: rgba(9, 9, 9, 0.97);
+            border-bottom: 1px solid #292929;
 
             backdrop-filter: blur(10px);
         }
@@ -51,6 +51,7 @@
             font-size: 25px;
             font-weight: 900;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -60,13 +61,12 @@
         nav ul {
             display: flex;
             align-items: center;
-            gap: 28px;
-
+            gap: 25px;
             list-style: none;
         }
 
         nav a {
-            color: #ffffff;
+            color: white;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
@@ -76,14 +76,34 @@
             color: #a8e600;
         }
 
+        /* SUGGEST BUTTON */
+
+        .suggest-btn {
+            background: #a8e600;
+            color: #080808 !important;
+
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            font-weight: 900;
+
+            transition: 0.3s;
+        }
+
+        .suggest-btn:hover {
+            background: #c0ff29;
+            color: #080808 !important;
+            transform: translateY(-2px);
+        }
+
         /* =========================
            HERO
         ========================= */
 
         .hero {
             position: relative;
-
-            min-height: 440px;
+            min-height: 430px;
 
             display: flex;
             align-items: center;
@@ -94,7 +114,7 @@
                 linear-gradient(
                     90deg,
                     rgba(0, 0, 0, 0.95) 0%,
-                    rgba(0, 0, 0, 0.75) 45%,
+                    rgba(0, 0, 0, 0.75) 50%,
                     rgba(0, 0, 0, 0.35) 100%
                 ),
                 url("gb-botanica-gym-link-spaces-slough-1024x68.jpg");
@@ -106,9 +126,7 @@
         .hero-content {
             width: 100%;
             max-width: 1100px;
-
             margin: auto;
-
             padding: 80px 30px;
         }
 
@@ -125,7 +143,7 @@
         }
 
         .hero h1 {
-            max-width: 650px;
+            max-width: 700px;
 
             font-size: clamp(48px, 7vw, 82px);
 
@@ -165,7 +183,7 @@
         }
 
         /* =========================
-           FORM CONTAINER
+           FORM
         ========================= */
 
         .form-container {
@@ -183,15 +201,12 @@
 
         .form-heading {
             text-align: center;
-
             margin-bottom: 40px;
         }
 
         .form-heading h2 {
             font-size: 34px;
-
             text-transform: uppercase;
-
             margin-bottom: 8px;
         }
 
@@ -203,7 +218,7 @@
             color: #999999;
         }
 
-        .form-heading .line {
+        .line {
             width: 70px;
             height: 4px;
 
@@ -228,7 +243,6 @@
             margin-bottom: 10px;
 
             font-size: 18px;
-
             font-weight: bold;
         }
 
@@ -240,7 +254,7 @@
 
             background: #0d0d0d;
 
-            color: #ffffff;
+            color: white;
 
             border: 1px solid #3b3b3b;
 
@@ -257,11 +271,12 @@
 
             border-color: #a8e600;
 
-            box-shadow: 0 0 0 3px rgba(168, 230, 0, 0.08);
+            box-shadow:
+                0 0 0 3px rgba(168, 230, 0, 0.08);
         }
 
         input::placeholder {
-            color: #777777;
+            color: #777;
         }
 
         /* =========================
@@ -269,7 +284,7 @@
         ========================= */
 
         fieldset {
-            border: 1px solid #333333;
+            border: 1px solid #333;
 
             border-radius: 15px;
 
@@ -293,7 +308,7 @@
         }
 
         /* =========================
-           CHOICE ROWS
+           RADIO / CHECKBOX
         ========================= */
 
         .choice {
@@ -349,7 +364,7 @@
 
             border-radius: 15px;
 
-            border: 1px solid #333333;
+            border: 1px solid #333;
         }
 
         .image-card img {
@@ -364,7 +379,7 @@
         }
 
         .image-card:hover img {
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         .image-card::after {
@@ -377,8 +392,8 @@
             background:
                 linear-gradient(
                     90deg,
-                    rgba(0, 0, 0, 0.75),
-                    rgba(0, 0, 0, 0.05)
+                    rgba(0, 0, 0, 0.8),
+                    rgba(0, 0, 0, 0.15)
                 );
         }
 
@@ -393,7 +408,6 @@
 
         .image-text h3 {
             font-size: 24px;
-
             text-transform: uppercase;
         }
 
@@ -456,13 +470,13 @@
 
             background: #050505;
 
-            color: #777777;
+            color: #777;
 
-            border-top: 1px solid #222222;
+            border-top: 1px solid #222;
         }
 
-        footer .footer-logo {
-            color: #ffffff;
+        .footer-logo {
+            color: white;
 
             font-size: 24px;
 
@@ -471,7 +485,7 @@
             margin-bottom: 8px;
         }
 
-        footer .footer-logo span {
+        .footer-logo span {
             color: #a8e600;
         }
 
@@ -483,21 +497,30 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 750px) {
+        @media (max-width: 850px) {
 
             header {
-                flex-direction: column;
-
-                gap: 15px;
-
-                padding: 18px 20px;
+                padding: 18px 25px;
             }
 
             nav ul {
-                gap: 16px;
+                gap: 15px;
+            }
 
+            .suggest-btn {
+                padding: 9px 12px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav ul {
                 flex-wrap: wrap;
-
                 justify-content: center;
             }
 
@@ -531,7 +554,6 @@
             .image-card {
                 height: 190px;
             }
-
         }
 
     </style>
@@ -557,20 +579,20 @@
         <ul>
 
             <li>
-                <a href="index.html">
-                    Home
-                </a>
+                <a href="index.html">Home</a>
             </li>
 
             <li>
-                <a href="about.html">
-                    About
-                </a>
+                <a href="about.html">About</a>
             </li>
 
             <li>
-                <a href="contact.html">
-                    Contact
+                <a href="contact.html">Contact</a>
+            </li>
+
+            <li>
+                <a href="suggest-place.html" class="suggest-btn">
+                    Suggest a Gym Spot
                 </a>
             </li>
 
@@ -636,9 +658,7 @@
         <form>
 
 
-            <!-- =========================
-                 PLACE NAME
-            ========================= -->
+            <!-- PLACE NAME -->
 
             <div class="input-group">
 
@@ -657,9 +677,7 @@
             </div>
 
 
-            <!-- =========================
-                 BOTANICA IMAGE
-            ========================= -->
+            <!-- BOTANICA IMAGE -->
 
             <div class="image-card">
 
@@ -683,16 +701,13 @@
             </div>
 
 
-            <!-- =========================
-                 CATEGORY
-            ========================= -->
+            <!-- CATEGORY -->
 
             <fieldset>
 
                 <legend>
                     What type of gym spot is it?
                 </legend>
-
 
                 <div class="choice">
 
@@ -745,9 +760,7 @@
             </fieldset>
 
 
-            <!-- =========================
-                 TIPS IMAGE
-            ========================= -->
+            <!-- TIPS FOR HOME GYM IMAGE -->
 
             <div class="image-card">
 
@@ -771,16 +784,13 @@
             </div>
 
 
-            <!-- =========================
-                 GOOD POINTS
-            ========================= -->
+            <!-- GOOD POINTS -->
 
             <fieldset>
 
                 <legend>
                     What's good about this gym spot?
                 </legend>
-
 
                 <div class="choice">
 
@@ -832,9 +842,7 @@
             </fieldset>
 
 
-            <!-- =========================
-                 EMAIL
-            ========================= -->
+            <!-- CONTACT EMAIL -->
 
             <div class="input-group">
 
@@ -853,9 +861,7 @@
             </div>
 
 
-            <!-- =========================
-                 SUBMIT
-            ========================= -->
+            <!-- SUBMIT -->
 
             <button type="submit">
                 Recommend Gym Spot
