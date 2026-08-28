@@ -1,48 +1,731 @@
-<h1>Xien Fitness Industry</h1>
-<p>Start your fitness journey now! Discover the best gym spots around Intramuros picked for students and locals looking to stay fit and active.</p>
+<!DOCTYPE html>
+<html lang="en">
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h1>Xien Fitness Industry</h1>
-<p>Where strength meets purpose</p>
+    <title>Best Gym Spots | Intramuros</title>
 
-<section>
-  <h2>Harold Chien L. Santiago</h2>
-  <p>Built different.</p>
-  <img src="harold-chien-l-santiago.jpg" alt="Harold Chien L. Santiago">
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 7%;
+
+            background: rgba(11, 11, 11, 0.96);
+            border-bottom: 1px solid #292929;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #aaa;
+        }
+
+        .suggest-button {
+            background: white;
+            color: black !important;
+
+            padding: 10px 18px;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+        .suggest-button:hover {
+            background: #ccc;
+            color: black !important;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.9)
+                ),
+                url("gym.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #aaa;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 35px;
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background: white;
+            color: black;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-4px);
+            background: #ddd;
+        }
+
+        .hero-order {
+            margin-left: 10px;
+
+            background: transparent;
+            color: white;
+
+            border: 1px solid white;
+        }
+
+        .hero-order:hover {
+            background: white;
+            color: black;
+        }
+
+
+        /* =========================
+           INTRODUCTION
+        ========================= */
+
+        .intro {
+            max-width: 1000px;
+            margin: auto;
+
+            padding: 100px 30px;
+
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #aaa;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           GYM SPOTS
+        ========================= */
+
+        .gym-section {
+            padding: 100px 7%;
+
+            background: #111;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            text-transform: uppercase;
+        }
+
+        .section-title p {
+            color: #999;
+        }
+
+        .gym-cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+        .gym-card {
+            background: #191919;
+
+            border: 1px solid #2d2d2d;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .gym-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #777;
+        }
+
+        .gym-card img {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .gym-content {
+            padding: 30px;
+        }
+
+        .gym-content h3 {
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .gym-content p {
+            color: #999;
+
+            margin-bottom: 20px;
+        }
+
+        .details-button {
+            display: inline-block;
+
+            width: 100%;
+
+            padding: 13px;
+
+            text-align: center;
+
+            background: white;
+            color: black;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .details-button:hover {
+            background: #ccc;
+        }
+
+
+        /* =========================
+           SUGGEST SECTION
+        ========================= */
+
+        .suggest-section {
+            padding: 100px 25px;
+
+            text-align: center;
+
+            background: #0b0b0b;
+        }
+
+        .suggest-section h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .suggest-section p {
+            color: #999;
+
+            max-width: 650px;
+
+            margin: 0 auto 30px;
+        }
+
+        .suggest-main-button {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background: white;
+            color: black;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .suggest-main-button:hover {
+            background: #ccc;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background: #050505;
+
+            color: #777;
+
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+            }
+
+            .gym-cards {
+                grid-template-columns: 1fr;
+
+                max-width: 500px;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero-button {
+                display: block;
+
+                width: 100%;
+
+                max-width: 300px;
+
+                margin: 10px auto;
+            }
+
+            .hero-order {
+                margin: 10px auto;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        BEST GYM SPOTS
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="suggest-place.html"
+                    class="suggest-button"
+                >
+                    Suggest a Gym Spot
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Best <span>Gym Spots</span>
+        </h1>
+
+        <p>
+            Your guide to the best gyms and fitness
+            spots around Intramuros.
+        </p>
+
+        <a
+            href="#gym-spots"
+            class="hero-button"
+        >
+            EXPLORE GYM SPOTS
+        </a>
+
+        <a
+            href="suggest-place.html"
+            class="hero-button hero-order"
+        >
+            SUGGEST A GYM SPOT
+        </a>
+
+    </div>
+
 </section>
 
-<section>
-  <h2>Xien</h2>
-  <p>Hey there! I am Xien, a local fitness enthusiast who has explored every workout spot near Intramuros to help you find the best places for training, cardio, and building your dream physique.</p>
-  <img src="profile.jpg" alt="Xien, founder of Xien Fitness Industry">
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <h2>
+        FIND YOUR NEXT WORKOUT SPOT
+    </h2>
+
+    <p>
+        Looking for a gym around Intramuros?
+        We've gathered gym and fitness spots
+        to help you find a place that fits
+        your training needs.
+    </p>
+
 </section>
 
-<h2>My Top Picks</h2>
 
-<article>
-  <h3>Anda Fitness Gym</h3>
-  <p>Legaspi St, Intramuros, Manila</p>
-  <p>An affordable local gym right inside the walled city featuring essential free weights and machines for students staying active between classes.</p>
-  <img src="anda-gym.jpg" alt="Interior setup of Anda Fitness Gym in Intramuros">
-</article>
 
-<article>
-  <h3>Club Intramuros Golf Course</h3>
-  <p>Bonifacio Drive, Intramuros, Manila</p>
-  <p>A great spot for golf driving practice and outdoor sports conditioning set right alongside the iconic historical walls.</p>
-  <img src="club-intramuros.jpg" alt="Green golf course landscape at Club Intramuros">
-</article>
+<!-- =========================
+     GYM SPOTS
+========================= -->
 
-<article>
-  <h3>Muralla Street Running Route</h3>
-  <p>Muralla St, Intramuros, Manila</p>
-  <p>A scenic outdoor running path along the historic ramparts, perfect for early morning jogs and bodyweight cardio workouts.</p>
-  <img src="muralla-jogging.jpg" alt="Historic cobblestone walking wall path along Muralla Street in Intramuros">
-</article>
+<section
+    class="gym-section"
+    id="gym-spots"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Recommended Gym Spots
+        </h2>
+
+        <p>
+            Check out some of the recommended
+            fitness spots around Intramuros.
+        </p>
+
+    </div>
+
+
+    <div class="gym-cards">
+
+
+        <!-- GYM SPOT 1 -->
+
+        <article class="gym-card">
+
+            <img
+                src="gym1.jpg"
+                alt="Gym Spot 1"
+            >
+
+            <div class="gym-content">
+
+                <h3>
+                    Gym Spot 1
+                </h3>
+
+                <p>
+                    A convenient fitness spot
+                    around Intramuros for your
+                    regular workout.
+                </p>
+
+                <a
+                    href="#"
+                    class="details-button"
+                >
+                    VIEW DETAILS
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- GYM SPOT 2 -->
+
+        <article class="gym-card">
+
+            <img
+                src="gym2.jpg"
+                alt="Gym Spot 2"
+            >
+
+            <div class="gym-content">
+
+                <h3>
+                    Gym Spot 2
+                </h3>
+
+                <p>
+                    A fitness location suitable
+                    for strength and conditioning.
+                </p>
+
+                <a
+                    href="#"
+                    class="details-button"
+                >
+                    VIEW DETAILS
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- GYM SPOT 3 -->
+
+        <article class="gym-card">
+
+            <img
+                src="gym3.jpg"
+                alt="Gym Spot 3"
+            >
+
+            <div class="gym-content">
+
+                <h3>
+                    Gym Spot 3
+                </h3>
+
+                <p>
+                    Another option for people
+                    looking for a workout spot
+                    around Intramuros.
+                </p>
+
+                <a
+                    href="#"
+                    class="details-button"
+                >
+                    VIEW DETAILS
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SUGGEST GYM SPOT
+========================= -->
+
+<section class="suggest-section">
+
+    <h2>
+        KNOW A GREAT GYM?
+    </h2>
+
+    <p>
+        Help us improve our guide by recommending
+        a gym or fitness spot around Intramuros.
+    </p>
+
+    <a
+        href="suggest-place.html"
+        class="suggest-main-button"
+    >
+        SUGGEST A GYM SPOT
+    </a>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        &copy; 2026 Best Gym Spots
+    </p>
+
+    <p>
+        Your guide to gym and fitness spots
+        around Intramuros.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
