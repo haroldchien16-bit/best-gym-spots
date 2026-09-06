@@ -20,6 +20,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -30,13 +34,22 @@ body {
 
 
 /* =========================
-   LAYOUT
+   HEADER & NAVIGATION
 ========================= */
 
 header {
-    background: var(--light-background);
-    padding: 25px;
-    text-align: center;
+    background: var(--dark-ink);
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 nav ul {
@@ -47,30 +60,126 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin: 0 12px;
+    margin-left: 25px;
 }
 
 nav a {
     color: var(--brand);
     text-decoration: none;
     font-weight: bold;
+    transition: opacity 0.2s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
 
-footer {
-    background: var(--light-background);
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 60px 20px;
+    background: var(--light-background);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    margin: 0 0 20px;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: var(--brand);
+}
+
+.hero p {
+    color: var(--muted-grey);
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-button,
+.suggest-main-button,
+.details-button {
+    display: inline-block;
+    background: var(--brand);
+    color: var(--dark-ink);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 13px 22px;
+    border-radius: 8px;
+    margin: 5px;
+    transition: opacity 0.2s ease;
+}
+
+.hero-button:hover,
+.suggest-main-button:hover,
+.details-button:hover {
+    opacity: 0.8;
+}
+
+.hero-order {
+    background: transparent;
+    color: var(--brand);
+    border: 1px solid var(--brand);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    max-width: 800px;
+    margin: auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: var(--muted-grey);
+    font-size: 18px;
+}
+
+
+/* =========================
+   GYM SECTION
+========================= */
+
+.gym-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: var(--muted-grey);
 }
 
 
@@ -78,19 +187,70 @@ footer {
    PLACE CARDS
 ========================= */
 
+.gym-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
 .place-card {
     background: var(--card-background);
     border-radius: 16px;
     padding: 20px;
     border-left: 5px solid var(--brand);
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
-.place-card h2,
+.place-card img {
+    width: calc(100% + 20px);
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    margin: -20px -15px 20px -20px;
+}
+
+.gym-content {
+    padding: 5px;
+}
+
 .place-card h3 {
     font-size: 24px;
     color: var(--brand);
-    margin-top: 0;
+    margin: 0 0 10px;
+}
+
+.place-card p {
+    color: var(--muted-grey);
+    margin-bottom: 20px;
+}
+
+.details-button {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SUGGEST SECTION
+========================= */
+
+.suggest-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--light-background);
+    margin-top: 40px;
+}
+
+.suggest-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.suggest-section p {
+    color: var(--muted-grey);
+    max-width: 650px;
+    margin: 0 auto 25px;
 }
 
 
@@ -99,7 +259,8 @@ footer {
 ========================= */
 
 form {
-    margin-top: 25px;
+    max-width: 800px;
+    margin: 30px auto 0;
 }
 
 fieldset {
@@ -131,12 +292,20 @@ select {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 16px;
+    font-family: inherit;
+    background: var(--dark-ink);
+    color: var(--brand);
 }
 
 textarea {
     min-height: 140px;
     resize: vertical;
 }
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
 
 button[type="submit"] {
     background: var(--brand);
@@ -147,6 +316,10 @@ button[type="submit"] {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.8;
 }
 
 
@@ -164,11 +337,19 @@ button:focus {
 
 
 /* =========================
-   HOVER
+   FOOTER
 ========================= */
 
-button[type="submit"]:hover {
-    opacity: 0.85;
+footer {
+    background: var(--dark-ink);
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    color: var(--muted-grey);
+    margin: 5px 0;
 }
 
 
@@ -176,11 +357,56 @@ button[type="submit"]:hover {
    RESPONSIVE
 ========================= */
 
+@media (max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+
+    nav li {
+        margin: 0 8px;
+    }
+
+    .gym-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+}
+
+
 @media (max-width: 600px) {
 
     nav li {
         display: block;
+        text-align: center;
         margin: 10px 0;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .hero-button {
+        display: block;
+        max-width: 280px;
+        margin: 10px auto;
     }
 
     main {
