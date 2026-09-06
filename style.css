@@ -6,9 +6,9 @@
     --brand: #ffffff;
     --dark-ink: #0b0b0b;
     --muted-grey: #aaa;
-    --light-background: #111;
-    --card-background: #191919;
-    --border-color: #2d2d2d;
+    --light-background: #151515;
+    --card-background: #1c1c1c;
+    --border-color: #333;
 }
 
 
@@ -26,6 +26,7 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: var(--dark-ink);
     color: var(--brand);
@@ -34,12 +35,13 @@ body {
 
 
 /* =========================
-   HEADER & NAVIGATION
+   HEADER
 ========================= */
 
 header {
-    background: var(--dark-ink);
-    padding: 25px 50px;
+    width: 100%;
+    background: var(--light-background);
+    padding: 22px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,11 +69,10 @@ nav a {
     color: var(--brand);
     text-decoration: none;
     font-weight: bold;
-    transition: opacity 0.2s ease;
 }
 
 nav a:hover {
-    opacity: 0.7;
+    text-decoration: underline;
 }
 
 
@@ -80,22 +81,24 @@ nav a:hover {
 ========================= */
 
 .hero {
-    min-height: 500px;
+    width: 100%;
+    min-height: 520px;
+    background: var(--light-background);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 20px;
-    background: var(--light-background);
+    padding: 80px 20px;
 }
 
 .hero-content {
-    max-width: 800px;
+    width: 100%;
+    max-width: 850px;
 }
 
 .hero h1 {
-    font-size: 56px;
     margin: 0 0 20px;
+    font-size: 58px;
     line-height: 1.1;
 }
 
@@ -104,28 +107,33 @@ nav a:hover {
 }
 
 .hero p {
+    margin: 0 auto 30px;
+    max-width: 650px;
     color: var(--muted-grey);
     font-size: 20px;
-    margin-bottom: 30px;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
 .hero-button,
-.suggest-main-button,
-.details-button {
+.details-button,
+.suggest-main-button {
     display: inline-block;
     background: var(--brand);
     color: var(--dark-ink);
     text-decoration: none;
     font-weight: bold;
-    padding: 13px 22px;
+    padding: 13px 24px;
     border-radius: 8px;
     margin: 5px;
-    transition: opacity 0.2s ease;
 }
 
 .hero-button:hover,
-.suggest-main-button:hover,
-.details-button:hover {
+.details-button:hover,
+.suggest-main-button:hover {
     opacity: 0.8;
 }
 
@@ -141,18 +149,20 @@ nav a:hover {
 ========================= */
 
 .intro {
-    max-width: 800px;
-    margin: auto;
-    padding: 70px 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
     text-align: center;
 }
 
 .intro h2 {
+    margin: 0 0 15px;
     font-size: 32px;
-    margin-bottom: 15px;
 }
 
 .intro p {
+    margin: 0;
     color: var(--muted-grey);
     font-size: 18px;
 }
@@ -163,22 +173,24 @@ nav a:hover {
 ========================= */
 
 .gym-section {
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
-    padding: 60px 20px;
+    margin: 0 auto;
+    padding: 70px 20px;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .section-title h2 {
+    margin: 0 0 10px;
     font-size: 36px;
-    margin-bottom: 10px;
 }
 
 .section-title p {
+    margin: 0;
     color: var(--muted-grey);
 }
 
@@ -188,12 +200,15 @@ nav a:hover {
 ========================= */
 
 .gym-cards {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
 }
 
 .place-card {
+    width: 100%;
+    min-width: 0;
     background: var(--card-background);
     border-radius: 16px;
     padding: 20px;
@@ -203,31 +218,27 @@ nav a:hover {
 }
 
 .place-card img {
-    width: calc(100% + 20px);
+    width: 100%;
     height: 220px;
     object-fit: cover;
     display: block;
-    margin: -20px -15px 20px -20px;
-}
-
-.gym-content {
-    padding: 5px;
-}
-
-.place-card h3 {
-    font-size: 24px;
-    color: var(--brand);
-    margin: 0 0 10px;
-}
-
-.place-card p {
-    color: var(--muted-grey);
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.details-button {
-    margin: 0;
-    font-size: 14px;
+.gym-content {
+    padding: 0;
+}
+
+.place-card h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: var(--brand);
+}
+
+.place-card p {
+    margin: 0 0 20px;
+    color: var(--muted-grey);
 }
 
 
@@ -236,21 +247,21 @@ nav a:hover {
 ========================= */
 
 .suggest-section {
+    width: 100%;
     text-align: center;
     padding: 80px 20px;
     background: var(--light-background);
-    margin-top: 40px;
 }
 
 .suggest-section h2 {
+    margin: 0 0 15px;
     font-size: 32px;
-    margin-bottom: 15px;
 }
 
 .suggest-section p {
-    color: var(--muted-grey);
     max-width: 650px;
     margin: 0 auto 25px;
+    color: var(--muted-grey);
 }
 
 
@@ -259,8 +270,9 @@ nav a:hover {
 ========================= */
 
 form {
+    width: 100%;
     max-width: 800px;
-    margin: 30px auto 0;
+    margin: 30px auto;
 }
 
 fieldset {
@@ -271,10 +283,10 @@ fieldset {
 }
 
 legend {
+    padding: 0 10px;
     color: var(--brand);
     font-size: 20px;
     font-weight: bold;
-    padding: 0 10px;
 }
 
 label {
@@ -291,10 +303,10 @@ select {
     margin-bottom: 15px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    font-size: 16px;
-    font-family: inherit;
     background: var(--dark-ink);
     color: var(--brand);
+    font-family: inherit;
+    font-size: 16px;
 }
 
 textarea {
@@ -341,6 +353,7 @@ button:focus {
 ========================= */
 
 footer {
+    width: 100%;
     background: var(--dark-ink);
     text-align: center;
     padding: 30px 20px;
@@ -348,55 +361,55 @@ footer {
 }
 
 footer p {
-    color: var(--muted-grey);
     margin: 5px 0;
+    color: var(--muted-grey);
 }
 
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
     header {
         flex-direction: column;
         gap: 20px;
-        padding: 25px 20px;
-    }
-
-    nav li {
-        margin: 0 8px;
+        text-align: center;
     }
 
     .gym-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .hero h1 {
-        font-size: 42px;
-    }
-
-    .section-title h2 {
-        font-size: 30px;
+        font-size: 48px;
     }
 }
 
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
 
     nav li {
         display: block;
-        text-align: center;
         margin: 10px 0;
     }
 
     .hero {
         min-height: 450px;
+        padding: 60px 20px;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 38px;
     }
 
     .hero p {
@@ -409,8 +422,24 @@ footer p {
         margin: 10px auto;
     }
 
-    main {
-        padding: 25px 15px;
+    .intro {
+        padding: 60px 20px;
+    }
+
+    .gym-section {
+        padding: 60px 15px;
+    }
+
+    .gym-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .place-card {
+        margin-bottom: 20px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
     }
 
     fieldset {
