@@ -1,0 +1,594 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --brand-color: #ffffff;
+    --dark-ink: #0b0b0b;
+    --muted-grey: #aaa;
+    --light-background: #111;
+
+    --card-background: #191919;
+    --border-color: #2d2d2d;
+    --light-grey: #ccc;
+    --dark-grey: #777;
+}
+
+
+/* =========================
+   BASE STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--dark-ink);
+    color: var(--brand-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   LAYOUT - HEADER & NAVIGATION
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+
+    background: var(--dark-ink);
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: var(--brand-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--muted-grey);
+}
+
+
+/* =========================
+   LAYOUT - MAIN
+========================= */
+
+main {
+    width: 100%;
+}
+
+main > h2,
+main > p,
+main > ul,
+main > form {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main > h2 {
+    padding: 60px 30px 0;
+    margin-bottom: 20px;
+
+    font-size: 40px;
+}
+
+main > p {
+    padding: 0 30px;
+    margin-bottom: 25px;
+
+    color: var(--muted-grey);
+    font-size: 18px;
+}
+
+main > ul {
+    padding: 0 30px 0 60px;
+    margin-bottom: 40px;
+
+    color: var(--muted-grey);
+}
+
+main > ul li {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   COMPONENT - HERO
+========================= */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url("gym.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--muted-grey);
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--light-grey);
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   COMPONENT - HERO BUTTONS
+========================= */
+
+.hero-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: var(--brand-color);
+    color: var(--dark-ink);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-4px);
+    background: var(--light-grey);
+}
+
+.hero-order {
+    margin-left: 10px;
+
+    background: transparent;
+    color: var(--brand-color);
+
+    border: 1px solid var(--brand-color);
+}
+
+.hero-order:hover {
+    background: var(--brand-color);
+    color: var(--dark-ink);
+}
+
+
+/* =========================
+   COMPONENT - INTRO
+========================= */
+
+.intro {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: var(--muted-grey);
+
+    max-width: 750px;
+    margin: auto;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   COMPONENT - GYM SPOTS
+========================= */
+
+.gym-section {
+    padding: 100px 7%;
+
+    background: var(--light-background);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    text-transform: uppercase;
+}
+
+.section-title p {
+    color: var(--muted-grey);
+}
+
+.gym-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================
+   COMPONENT - PLACE CARDS
+========================= */
+
+.gym-card {
+    background: var(--card-background);
+
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.gym-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--dark-grey);
+}
+
+.gym-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+    display: block;
+}
+
+.gym-content {
+    padding: 30px;
+}
+
+.gym-content h3 {
+    font-size: 25px;
+
+    color: var(--brand-color);
+
+    margin-bottom: 10px;
+}
+
+.gym-content p {
+    color: var(--muted-grey);
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   COMPONENT - DETAILS BUTTON
+========================= */
+
+.details-button {
+    display: inline-block;
+
+    width: 100%;
+
+    padding: 13px;
+
+    text-align: center;
+
+    background: var(--brand-color);
+    color: var(--dark-ink);
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.details-button:hover {
+    background: var(--light-grey);
+}
+
+
+/* =========================
+   COMPONENT - SUGGEST SECTION
+========================= */
+
+.suggest-section {
+    padding: 100px 25px;
+
+    text-align: center;
+
+    background: var(--dark-ink);
+}
+
+.suggest-section h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.suggest-section p {
+    color: var(--muted-grey);
+
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.suggest-main-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: var(--brand-color);
+    color: var(--dark-ink);
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.suggest-main-button:hover {
+    background: var(--light-grey);
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   COMPONENT - CONTACT FORM
+========================= */
+
+form {
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+fieldset {
+    max-width: 700px;
+    margin: auto;
+
+    padding: 30px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+
+    background: var(--card-background);
+}
+
+legend {
+    padding: 0 10px;
+
+    color: var(--brand-color);
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background: var(--dark-ink);
+    color: var(--brand-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* =========================
+   FORM FOCUS STATE
+========================= */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   COMPONENT - BUTTON
+========================= */
+
+button {
+    padding: 12px 25px;
+
+    background: var(--brand-color);
+    color: var(--dark-ink);
+
+    border: none;
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--light-grey);
+}
+
+
+/* =========================
+   LAYOUT - FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: var(--dark-ink);
+
+    color: var(--dark-grey);
+
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =========================
+   RESPONSIVE / MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .gym-cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero-button {
+        display: block;
+
+        width: 100%;
+        max-width: 300px;
+
+        margin: 10px auto;
+    }
+
+    .hero-order {
+        margin: 10px auto;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    main > h2 {
+        font-size: 30px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+}
