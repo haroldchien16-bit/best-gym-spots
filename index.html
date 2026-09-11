@@ -1,755 +1,288 @@
-/* ========================================
-   BEST GYM SPOTS
-   Main Stylesheet
-======================================== */
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* ========================================
-   ROOT VARIABLES
-======================================== */
+    <title>Best Gym Spots | Intramuros</title>
 
-:root {
-    --brand-color: #ffffff;
-    --brand: #ffffff;
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
 
-    --dark-ink: #0b0b0b;
-    --muted-grey: #aaaaaa;
+<body>
 
-    --light-background: #111111;
-    --card-background: #191919;
+    <!-- HEADER -->
+    <header>
 
-    --border-color: #2d2d2d;
+        <div class="logo">
+            BEST GYM SPOTS
+        </div>
 
-    --light-grey: #cccccc;
-    --dark-grey: #777777;
-}
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
+                <li>
+                    <a href="about.html">About</a>
+                </li>
 
-/* ========================================
-   BASIC RESET
-======================================== */
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+                <li>
+                    <a href="suggest-place.html" class="suggest-button">
+                        Suggest a Gym Spot
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-html {
-    scroll-behavior: smooth;
-}
+    </header>
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--dark-ink);
-    color: var(--brand);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
 
-img {
-    max-width: 100%;
-    display: block;
-}
+    <!-- HERO -->
+    <section class="hero">
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+        <div class="hero-content">
 
+            <p class="hero-label">
+                INTRAMUROS FITNESS GUIDE
+            </p>
 
-/* ========================================
-   HEADER
-======================================== */
+            <h1>
+                Best <span>Gym Spots</span>
+            </h1>
 
-header {
-    width: 100%;
-    min-height: 70px;
+            <p class="hero-description">
+                Your guide to the best gyms and fitness
+                spots around Intramuros.
+            </p>
 
-    padding: 18px 7%;
+            <div class="hero-buttons">
 
-    background: var(--dark-ink);
+                <a href="#gym-spots" class="hero-button">
+                    EXPLORE GYM SPOTS
+                </a>
 
-    border-bottom: 1px solid var(--border-color);
+                <a href="suggest-place.html" class="hero-button hero-order">
+                    SUGGEST A GYM SPOT
+                </a>
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+            </div>
 
-    gap: 30px;
+        </div>
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+    </section>
 
 
-/* LOGO */
+    <!-- INTRO -->
+    <section class="intro">
 
-.logo {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
+        <div class="intro-content">
 
+            <p class="section-label">
+                FIND YOUR NEXT WORKOUT SPOT
+            </p>
 
-/* NAVIGATION */
+            <h2>
+                TRAIN HARD.<br>
+                STAY CONSISTENT.
+            </h2>
 
-nav ul {
-    list-style: none;
+            <p>
+                Looking for a gym around Intramuros?
+                We've gathered gym and fitness spots
+                to help you find a place that fits
+                your training needs.
+            </p>
 
-    display: flex;
-    align-items: center;
+        </div>
 
-    gap: 28px;
-}
+    </section>
 
-nav li {
-    list-style: none;
-}
 
-nav a {
-    color: var(--light-grey);
+    <!-- GYM SPOTS -->
+    <section class="gym-section" id="gym-spots">
 
-    font-size: 14px;
-    font-weight: 600;
+        <div class="section-title">
 
-    transition: 0.3s ease;
-}
+            <div>
+                <p class="section-label">
+                    OUR PICKS
+                </p>
 
-nav a:hover {
-    color: var(--brand);
-}
+                <h2>
+                    Recommended Gym Spots
+                </h2>
+            </div>
 
+            <p>
+                Check out some of the recommended
+                fitness spots around Intramuros.
+            </p>
 
-/* SUGGEST BUTTON IN NAV */
+        </div>
 
-.suggest-button {
-    display: inline-block;
 
-    padding: 9px 16px;
+        <div class="gym-cards">
 
-    background: var(--brand);
-    color: var(--dark-ink);
 
-    border-radius: 6px;
+            <!-- GYM SPOT 1 -->
+            <article class="place-card">
 
-    font-weight: 700;
-}
+                <div class="gym-image">
+                    <img
+                        src="gym1.jpg"
+                        alt="Gym Spot 1"
+                    >
+                </div>
 
-.suggest-button:hover {
-    background: var(--light-grey);
-    color: var(--dark-ink);
-}
+                <div class="gym-content">
 
+                    <p class="gym-number">
+                        01
+                    </p>
 
-/* ========================================
-   HERO
-======================================== */
+                    <h3>
+                        Gym Spot 1
+                    </h3>
 
-.hero {
-    min-height: 560px;
+                    <p>
+                        A convenient fitness spot
+                        around Intramuros for your
+                        regular workout.
+                    </p>
 
-    padding: 80px 7%;
+                    <a href="#" class="details-button">
+                        VIEW DETAILS
+                    </a>
 
-    display: flex;
-    align-items: center;
+                </div>
 
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.68),
-            rgba(0, 0, 0, 0.82)
-        ),
-        url("gym1.jpg");
+            </article>
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
+            <!-- GYM SPOT 2 -->
+            <article class="place-card">
 
-.hero-content {
-    width: 100%;
-    max-width: 760px;
-}
+                <div class="gym-image">
+                    <img
+                        src="gym2.jpg"
+                        alt="Gym Spot 2"
+                    >
+                </div>
 
+                <div class="gym-content">
 
-/* HERO TITLE */
+                    <p class="gym-number">
+                        02
+                    </p>
 
-.hero h1 {
-    font-size: clamp(42px, 7vw, 76px);
+                    <h3>
+                        Gym Spot 2
+                    </h3>
 
-    line-height: 1.05;
+                    <p>
+                        A fitness location suitable
+                        for strength and conditioning.
+                    </p>
 
-    font-weight: 800;
+                    <a href="#" class="details-button">
+                        VIEW DETAILS
+                    </a>
 
-    margin-bottom: 22px;
-}
+                </div>
 
-.hero h1 span {
-    color: var(--brand);
-}
+            </article>
 
 
-/* HERO DESCRIPTION */
+            <!-- GYM SPOT 3 -->
+            <article class="place-card">
 
-.hero p {
-    max-width: 600px;
+                <div class="gym-image">
+                    <img
+                        src="gym3.jpg"
+                        alt="Gym Spot 3"
+                    >
+                </div>
 
-    color: var(--light-grey);
+                <div class="gym-content">
 
-    font-size: 18px;
+                    <p class="gym-number">
+                        03
+                    </p>
 
-    margin-bottom: 30px;
-}
+                    <h3>
+                        Gym Spot 3
+                    </h3>
 
+                    <p>
+                        Another option for people
+                        looking for a workout spot
+                        around Intramuros.
+                    </p>
 
-/* HERO BUTTON CONTAINER */
+                    <a href="#" class="details-button">
+                        VIEW DETAILS
+                    </a>
 
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
+                </div>
 
+            </article>
 
-/* HERO BUTTON */
+        </div>
 
-.hero-button {
-    display: inline-block;
+    </section>
 
-    padding: 13px 22px;
 
-    background: var(--brand);
-    color: var(--dark-ink);
+    <!-- SUGGEST GYM SPOT -->
+    <section class="suggest-section">
 
-    border: 1px solid var(--brand);
+        <div class="suggest-content">
 
-    border-radius: 6px;
+            <p class="section-label">
+                HAVE A RECOMMENDATION?
+            </p>
 
-    font-size: 13px;
-    font-weight: 800;
+            <h2>
+                KNOW A GREAT GYM?
+            </h2>
 
-    letter-spacing: 0.5px;
+            <p>
+                Help us improve our guide by recommending
+                a gym or fitness spot around Intramuros.
+            </p>
 
-    transition: 0.3s ease;
-}
+            <a
+                href="suggest-place.html"
+                class="suggest-main-button"
+            >
+                SUGGEST A GYM SPOT
+            </a>
 
-.hero-button:hover {
-    background: transparent;
-    color: var(--brand);
-}
+        </div>
 
+    </section>
 
-/* SECOND HERO BUTTON */
 
-.hero-order {
-    background: transparent;
-    color: var(--brand);
-}
+    <!-- FOOTER -->
+    <footer>
 
-.hero-order:hover {
-    background: var(--brand);
-    color: var(--dark-ink);
-}
+        <p>
+            &copy; 2026 Best Gym Spots
+        </p>
 
+        <p>
+            Your guide to gym and fitness spots
+            around Intramuros.
+        </p>
 
-/* ========================================
-   INTRO
-======================================== */
+    </footer>
 
-.intro {
-    width: 100%;
-    max-width: 900px;
+</body>
 
-    margin: 0 auto;
-
-    padding: 80px 7%;
-
-    text-align: center;
-}
-
-.intro h2 {
-    font-size: 32px;
-
-    line-height: 1.2;
-
-    margin-bottom: 18px;
-}
-
-.intro p {
-    color: var(--muted-grey);
-
-    font-size: 16px;
-
-    max-width: 700px;
-
-    margin: 0 auto;
-}
-
-
-/* ========================================
-   GYM SECTION
-======================================== */
-
-.gym-section {
-    width: 100%;
-
-    padding: 80px 7%;
-
-    background: var(--light-background);
-}
-
-
-/* SECTION TITLE */
-
-.section-title {
-    max-width: 700px;
-
-    margin-bottom: 40px;
-}
-
-.section-title h2 {
-    font-size: 34px;
-
-    line-height: 1.2;
-
-    margin-bottom: 12px;
-}
-
-.section-title p {
-    color: var(--muted-grey);
-
-    font-size: 16px;
-}
-
-
-/* ========================================
-   GYM CARDS
-======================================== */
-
-.gym-cards {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 24px;
-}
-
-
-/* INDIVIDUAL CARD */
-
-.place-card {
-    width: 100%;
-
-    min-width: 0;
-
-    display: flex;
-    align-items: stretch;
-
-    background: var(--card-background);
-
-    border: 1px solid var(--border-color);
-    border-left: 5px solid var(--brand);
-
-    border-radius: 14px;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.place-card:hover {
-    transform: translateY(-3px);
-
-    border-color: var(--brand);
-}
-
-
-/* CARD IMAGE */
-
-.place-card img {
-    width: 300px;
-
-    min-width: 240px;
-
-    height: 230px;
-
-    object-fit: cover;
-
-    flex-shrink: 1;
-}
-
-
-/* CARD CONTENT */
-
-.gym-content {
-    flex: 1;
-
-    min-width: 0;
-
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-
-/* CARD TITLE */
-
-.gym-content h3 {
-    color: var(--brand);
-
-    font-size: 25px;
-
-    line-height: 1.2;
-
-    margin-bottom: 12px;
-}
-
-
-/* CARD DESCRIPTION */
-
-.gym-content p {
-    color: var(--muted-grey);
-
-    font-size: 15px;
-
-    line-height: 1.7;
-
-    max-width: 650px;
-
-    margin-bottom: 20px;
-}
-
-
-/* DETAILS BUTTON */
-
-.details-button {
-    display: inline-block;
-
-    padding: 10px 18px;
-
-    background: var(--brand);
-    color: var(--dark-ink);
-
-    border-radius: 6px;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.5px;
-
-    transition: 0.3s ease;
-}
-
-.details-button:hover {
-    background: var(--light-grey);
-}
-
-
-/* ========================================
-   SUGGEST SECTION
-======================================== */
-
-.suggest-section {
-    padding: 90px 7%;
-
-    text-align: center;
-
-    background: var(--dark-ink);
-
-    border-top: 1px solid var(--border-color);
-}
-
-
-.suggest-section h2 {
-    font-size: 34px;
-
-    line-height: 1.2;
-
-    margin-bottom: 15px;
-}
-
-
-.suggest-section p {
-    max-width: 650px;
-
-    margin: 0 auto 28px;
-
-    color: var(--muted-grey);
-
-    font-size: 16px;
-}
-
-
-/* MAIN SUGGEST BUTTON */
-
-.suggest-main-button {
-    display: inline-block;
-
-    padding: 13px 24px;
-
-    background: var(--brand);
-    color: var(--dark-ink);
-
-    border-radius: 6px;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    transition: 0.3s ease;
-}
-
-.suggest-main-button:hover {
-    background: var(--light-grey);
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
-
-footer {
-    padding: 35px 7%;
-
-    background: #080808;
-
-    border-top: 1px solid var(--border-color);
-
-    text-align: center;
-}
-
-
-footer p {
-    color: var(--dark-grey);
-
-    font-size: 13px;
-
-    margin: 4px 0;
-}
-
-
-/* ========================================
-   TABLET
-======================================== */
-
-@media (max-width: 900px) {
-
-    header {
-        padding: 18px 5%;
-    }
-
-    nav ul {
-        gap: 16px;
-    }
-
-    .hero {
-        padding: 70px 5%;
-    }
-
-    .gym-section {
-        padding: 70px 5%;
-    }
-
-    .intro {
-        padding: 70px 5%;
-    }
-
-    .suggest-section {
-        padding: 70px 5%;
-    }
-
-    .place-card img {
-        width: 35%;
-
-        min-width: 200px;
-
-        height: 220px;
-    }
-
-    .gym-content {
-        padding: 25px;
-    }
-
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 700px) {
-
-    /* HEADER */
-
-    header {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        padding: 18px 6%;
-
-        gap: 15px;
-    }
-
-    nav {
-        width: 100%;
-    }
-
-    nav ul {
-        width: 100%;
-
-        flex-wrap: wrap;
-
-        gap: 12px 18px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-
-    /* HERO */
-
-    .hero {
-        min-height: 500px;
-
-        padding: 60px 6%;
-    }
-
-    .hero h1 {
-        font-size: 45px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .hero-button {
-        width: auto;
-
-        text-align: center;
-    }
-
-
-    /* INTRO */
-
-    .intro {
-        padding: 60px 6%;
-    }
-
-    .intro h2 {
-        font-size: 27px;
-    }
-
-
-    /* GYM SECTION */
-
-    .gym-section {
-        padding: 60px 6%;
-    }
-
-    .section-title h2 {
-        font-size: 28px;
-    }
-
-
-    /* GYM CARDS */
-
-    .place-card {
-        flex-direction: column;
-    }
-
-    .place-card img {
-        width: 100%;
-
-        min-width: 0;
-
-        height: 220px;
-    }
-
-    .gym-content {
-        width: 100%;
-
-        padding: 24px;
-    }
-
-    .gym-content h3 {
-        font-size: 23px;
-    }
-
-
-    /* SUGGEST */
-
-    .suggest-section {
-        padding: 65px 6%;
-    }
-
-    .suggest-section h2 {
-        font-size: 28px;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-        padding: 30px 6%;
-    }
-
-}
-
-
-/* ========================================
-   SMALL PHONES
-======================================== */
-
-@media (max-width: 420px) {
-
-    .logo {
-        font-size: 17px;
-    }
-
-    nav ul {
-        gap: 10px 14px;
-    }
-
-    .suggest-button {
-        padding: 8px 12px;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .hero-button {
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .gym-content {
-        padding: 20px;
-    }
-
-    .details-button {
-        width: 100%;
-
-        text-align: center;
-    }
-
-}
+</html>
