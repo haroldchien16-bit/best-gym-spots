@@ -221,21 +221,27 @@ nav a:hover {
 
 
 /* =========================
-   PLACE CARDS
+   PLACE CARD GRID
 ========================= */
 
 .gym-cards {
     width: 100%;
 
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 25px;
+    gap: 24px;
 }
 
+
+/* =========================
+   PLACE CARDS
+========================= */
+
 .place-card {
-    width: 100%;
+    flex: 1 1 240px;
+
+    width: auto;
     min-width: 0;
 
     background: var(--card-background);
@@ -245,8 +251,6 @@ nav a:hover {
     padding: 20px;
 
     border-left: 5px solid var(--brand);
-
-    margin-bottom: 20px;
 
     overflow: hidden;
 }
@@ -270,12 +274,15 @@ nav a:hover {
 
 .place-card h3 {
     margin: 0 0 10px;
+
     font-size: 24px;
+
     color: var(--brand);
 }
 
 .place-card p {
     margin: 0 0 20px;
+
     color: var(--muted-grey);
 }
 
@@ -296,6 +303,7 @@ nav a:hover {
 
 .suggest-section h2 {
     margin: 0 0 15px;
+
     font-size: 32px;
 }
 
@@ -446,10 +454,6 @@ footer p {
         text-align: center;
     }
 
-    .gym-cards {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .hero h1 {
         font-size: 48px;
     }
@@ -503,14 +507,6 @@ footer p {
 
     .gym-section {
         padding: 60px 15px;
-    }
-
-    .gym-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .place-card {
-        margin-bottom: 20px;
     }
 
     .section-title h2 {
