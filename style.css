@@ -26,11 +26,9 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     margin: 0;
@@ -42,6 +40,8 @@ body {
     color: var(--brand);
 
     line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
 
@@ -68,7 +68,9 @@ header {
 }
 
 
-/* Logo */
+/* =========================
+   LOGO
+========================= */
 
 .logo {
     color: var(--brand);
@@ -96,11 +98,9 @@ nav ul {
     padding: 0;
 }
 
-
 nav li {
     margin: 0;
 }
-
 
 nav a {
     color: var(--brand);
@@ -112,13 +112,14 @@ nav a {
     transition: 0.3s;
 }
 
-
 nav a:hover {
     opacity: 0.65;
 }
 
 
-/* Suggest button in navigation */
+/* =========================
+   NAV SUGGEST BUTTON
+========================= */
 
 .suggest-button {
     display: inline-block;
@@ -157,11 +158,10 @@ nav a:hover {
     background-position: center;
 }
 
-
 .hero-content {
+    width: 100%;
     max-width: 800px;
 }
-
 
 .hero h1 {
     margin: 0 0 15px;
@@ -170,11 +170,9 @@ nav a:hover {
     line-height: 1.1;
 }
 
-
 .hero h1 span {
     color: var(--brand);
 }
-
 
 .hero p {
     margin: 0 auto 25px;
@@ -209,11 +207,9 @@ nav a:hover {
     transition: 0.3s;
 }
 
-
 .hero-button:hover {
     opacity: 0.8;
 }
-
 
 .hero-order {
     background: transparent;
@@ -238,13 +234,11 @@ nav a:hover {
     text-align: center;
 }
 
-
 .intro h2 {
     margin-bottom: 15px;
 
     font-size: 32px;
 }
-
 
 .intro p {
     margin: 0 auto;
@@ -262,6 +256,7 @@ nav a:hover {
 ========================= */
 
 .gym-section {
+    width: 100%;
     max-width: 1200px;
 
     margin: 0 auto;
@@ -269,20 +264,17 @@ nav a:hover {
     padding: 60px 20px;
 }
 
-
 .section-title {
     text-align: center;
 
     margin-bottom: 35px;
 }
 
-
 .section-title h2 {
     margin-bottom: 10px;
 
     font-size: 36px;
 }
-
 
 .section-title p {
     margin: 0;
@@ -314,19 +306,19 @@ nav a:hover {
 
 .place-card {
     /*
-       Allows the cards to wrap naturally
-       while keeping them flexible.
+       Cards can wrap naturally.
     */
     flex: 1 1 240px;
 
     /*
-       Makes the individual card horizontal.
+       Makes each card horizontal.
     */
     display: flex;
     flex-direction: row;
 
     align-items: center;
 
+    min-width: 0;
     min-height: 260px;
 
     background: var(--card-background);
@@ -344,7 +336,6 @@ nav a:hover {
     transition: transform 0.3s ease;
 }
 
-
 .place-card:hover {
     transform: translateY(-5px);
 }
@@ -355,10 +346,16 @@ nav a:hover {
 ========================= */
 
 .place-card img {
-    width: 300px;
+    /*
+       Instead of a fixed 300px width,
+       the image now adjusts to the card.
+    */
+    width: 38%;
+    max-width: 300px;
+
     height: 220px;
 
-    flex-shrink: 0;
+    flex-shrink: 1;
 
     display: block;
 
@@ -373,11 +370,16 @@ nav a:hover {
 ========================= */
 
 .gym-content {
+    /*
+       Allows the text area to shrink
+       instead of overflowing.
+    */
     flex: 1;
 
-    padding: 0 25px;
-}
+    min-width: 0;
 
+    padding: 0 20px;
+}
 
 .gym-content h3 {
     margin-top: 0;
@@ -386,8 +388,9 @@ nav a:hover {
     color: var(--brand);
 
     font-size: 25px;
-}
 
+    overflow-wrap: break-word;
+}
 
 .gym-content p {
     margin-top: 0;
@@ -396,6 +399,8 @@ nav a:hover {
     color: var(--light-grey);
 
     line-height: 1.6;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -421,7 +426,6 @@ nav a:hover {
     transition: 0.3s;
 }
 
-
 .details-button:hover {
     opacity: 0.8;
 }
@@ -442,13 +446,11 @@ nav a:hover {
     border-bottom: 1px solid var(--border-color);
 }
 
-
 .suggest-section h2 {
     margin-bottom: 10px;
 
     font-size: 35px;
 }
-
 
 .suggest-section p {
     max-width: 700px;
@@ -481,7 +483,6 @@ nav a:hover {
     transition: 0.3s;
 }
 
-
 .suggest-main-button:hover {
     opacity: 0.8;
 }
@@ -501,7 +502,6 @@ footer {
     color: var(--muted-grey);
 }
 
-
 footer p {
     margin: 5px 0;
 }
@@ -517,22 +517,23 @@ footer p {
         padding: 20px 30px;
     }
 
-
     .hero h1 {
         font-size: 45px;
     }
 
-
-    .place-card img {
-        width: 220px;
-        height: 200px;
+    .place-card {
+        flex: 1 1 100%;
     }
 
+    .place-card img {
+        width: 35%;
+        max-width: 260px;
+        height: 200px;
+    }
 
     .gym-content {
         padding: 0 20px;
     }
-
 }
 
 
@@ -550,7 +551,6 @@ footer p {
         gap: 15px;
     }
 
-
     nav ul {
         flex-direction: column;
 
@@ -558,76 +558,80 @@ footer p {
     }
 
 
+    /* HERO */
+
     .hero {
         min-height: 450px;
 
         padding: 50px 20px;
     }
 
-
     .hero h1 {
         font-size: 38px;
     }
-
 
     .hero p {
         font-size: 16px;
     }
 
 
+    /* INTRO */
+
     .intro {
         padding: 50px 20px;
     }
-
 
     .intro h2 {
         font-size: 28px;
     }
 
 
+    /* SECTION TITLE */
+
     .section-title h2 {
         font-size: 30px;
     }
 
 
-    /*
-       Keep each card horizontal,
-       but make it fit smaller screens.
-    */
+    /* GYM CARD */
 
     .place-card {
         flex: 1 1 100%;
 
         flex-direction: row;
 
+        min-width: 0;
         min-height: 190px;
 
         padding: 15px;
     }
 
-
     .place-card img {
-        width: 120px;
+        width: 30%;
+        max-width: 150px;
+
         height: 150px;
     }
 
-
     .gym-content {
+        min-width: 0;
+
         padding: 0 15px;
     }
 
-
     .gym-content h3 {
         font-size: 20px;
-    }
 
+        overflow-wrap: break-word;
+    }
 
     .gym-content p {
         font-size: 14px;
 
         margin-bottom: 12px;
-    }
 
+        overflow-wrap: break-word;
+    }
 
     .details-button {
         padding: 8px 12px;
@@ -636,15 +640,15 @@ footer p {
     }
 
 
+    /* SUGGEST SECTION */
+
     .suggest-section {
         padding: 60px 20px;
     }
 
-
     .suggest-section h2 {
         font-size: 28px;
     }
-
 }
 
 
@@ -663,7 +667,6 @@ footer p {
         font-size: 32px;
     }
 
-
     .hero-button {
         display: block;
 
@@ -673,41 +676,46 @@ footer p {
     }
 
 
+    /* KEEP CARD HORIZONTAL */
+
     .place-card {
-        min-height: 170px;
+        flex-direction: row;
 
-        padding: 12px;
+        min-height: 160px;
+
+        padding: 10px;
     }
-
 
     .place-card img {
-        width: 100px;
-        height: 140px;
-    }
+        width: 30%;
 
+        max-width: 100px;
+
+        height: 130px;
+    }
 
     .gym-content {
-        padding: 0 12px;
+        padding: 0 10px;
     }
-
 
     .gym-content h3 {
-        font-size: 18px;
-    }
+        font-size: 17px;
 
+        margin-bottom: 6px;
+    }
 
     .gym-content p {
-        font-size: 13px;
-
-        line-height: 1.4;
-    }
-
-
-    .details-button {
         font-size: 12px;
 
-        padding: 7px 10px;
+        line-height: 1.35;
+
+        margin-bottom: 8px;
     }
 
+    .details-button {
+        font-size: 11px;
+
+        padding: 6px 9px;
+    }
 }
 ```
