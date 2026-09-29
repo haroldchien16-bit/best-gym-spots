@@ -12,7 +12,7 @@
     --black: #080808;
     --dark: #101010;
     --card: #171717;
-    --card-light: #1e1e1e;
+    --card-light: #1d1d1d;
 
     --white: #ffffff;
     --light: #eeeeee;
@@ -20,6 +20,9 @@
     --dark-grey: #686868;
 
     --border: #2b2b2b;
+
+    --green: #a8f000;
+    --green-hover: #baff26;
 }
 
 
@@ -156,6 +159,7 @@ nav a:hover {
 
 .suggest-button:hover {
     background: var(--light);
+
     transform: translateY(-1px);
 }
 
@@ -180,38 +184,16 @@ nav a:hover {
         linear-gradient(
             90deg,
             rgba(0, 0, 0, 0.95) 0%,
-            rgba(0, 0, 0, 0.75) 48%,
+            rgba(0, 0, 0, 0.72) 48%,
             rgba(0, 0, 0, 0.45) 100%
         ),
         url("gym1.jpg");
 
     background-size: cover;
 
-    /*
-       Keeps the important part of the
-       gym picture visible.
-    */
     background-position: center center;
 
     background-repeat: no-repeat;
-}
-
-
-/* HERO IMAGE OVERLAY */
-
-.hero-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.15),
-            rgba(0, 0, 0, 0.35)
-        );
-
-    pointer-events: none;
 }
 
 
@@ -231,7 +213,7 @@ nav a:hover {
 
 
 /* ========================================
-   SMALL LABEL
+   HERO LABEL
 ======================================== */
 
 .hero-label,
@@ -300,7 +282,7 @@ nav a:hover {
 
 
 /* ========================================
-   BUTTON
+   HERO BUTTON
 ======================================== */
 
 .hero-button {
@@ -335,7 +317,7 @@ nav a:hover {
 
 
 /* ========================================
-   SECOND BUTTON
+   SECOND HERO BUTTON
 ======================================== */
 
 .hero-order {
@@ -456,16 +438,16 @@ nav a:hover {
 
     margin: 0 auto;
 
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 24px;
+    gap: 20px;
 }
 
 
 /* ========================================
-   CARD
+   GYM CARD
 ======================================== */
 
 .place-card {
@@ -473,9 +455,9 @@ nav a:hover {
 
     min-width: 0;
 
-    min-height: 280px;
-
     display: flex;
+
+    flex-direction: column;
 
     background: var(--card);
 
@@ -506,71 +488,34 @@ nav a:hover {
 
 
 /* ========================================
-   CARD IMAGE WRAPPER
+   GYM IMAGE
 ======================================== */
 
 .gym-image {
-    position: relative;
+    width: 100%;
 
-    width: 40%;
-
-    min-width: 300px;
-
-    height: auto;
-
-    min-height: 280px;
-
-    flex-shrink: 0;
+    height: 220px;
 
     overflow: hidden;
 
-    background: #111;
+    background: #111111;
 }
 
-
-/* ========================================
-   CARD IMAGE
-======================================== */
 
 .gym-image img {
     width: 100%;
 
     height: 100%;
 
-    min-height: 280px;
-
     object-fit: cover;
 
-    object-position: center;
+    object-position: center center;
 
     transition:
         transform 0.5s ease,
         filter 0.5s ease;
 }
 
-
-/*
-   Slightly darkens the image so the
-   card still matches the black theme.
-*/
-
-.image-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.25)
-        );
-
-    pointer-events: none;
-}
-
-
-/* IMAGE HOVER */
 
 .place-card:hover .gym-image img {
     transform: scale(1.06);
@@ -580,32 +525,28 @@ nav a:hover {
 
 
 /* ========================================
-   CARD CONTENT
+   GYM CONTENT
 ======================================== */
 
 .gym-content {
     flex: 1;
 
-    min-width: 0;
-
-    padding: 35px 40px;
+    padding: 25px 21px 22px;
 
     display: flex;
 
     flex-direction: column;
-
-    justify-content: center;
 
     align-items: flex-start;
 }
 
 
 /* ========================================
-   CARD NUMBER
+   GYM NUMBER
 ======================================== */
 
 .gym-number {
-    color: var(--dark-grey);
+    color: var(--green);
 
     font-size: 12px;
 
@@ -618,64 +559,119 @@ nav a:hover {
 
 
 /* ========================================
-   CARD TITLE
+   GYM TITLE
 ======================================== */
 
 .gym-content h3 {
-    font-size: 28px;
+    font-size: 22px;
 
-    line-height: 1.2;
+    line-height: 1.35;
 
     margin-bottom: 12px;
+
+    color: var(--white);
 }
 
 
 /* ========================================
-   CARD DESCRIPTION
+   GYM DESCRIPTION
 ======================================== */
 
 .gym-content > p:not(.gym-number) {
-    max-width: 600px;
-
     color: var(--grey);
 
-    font-size: 15px;
+    font-size: 13px;
 
-    line-height: 1.7;
+    line-height: 1.65;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 
 /* ========================================
-   DETAILS BUTTON
+   LOCATION BOX
 ======================================== */
 
-.details-button {
-    display: inline-block;
+.location-box {
+    width: 100%;
 
-    padding: 10px 17px;
+    min-height: 58px;
 
-    background: var(--white);
+    margin-top: auto;
 
-    color: var(--black);
+    margin-bottom: 16px;
 
-    border-radius: 5px;
+    padding: 11px 12px;
 
-    font-size: 11px;
+    display: flex;
 
-    font-weight: 800;
+    align-items: flex-start;
 
-    letter-spacing: 0.7px;
+    gap: 8px;
 
-    transition: 0.25s ease;
+    background: #0d0d0d;
+
+    border-left: 2px solid var(--green);
+
+    color: var(--light);
+
+    font-size: 12px;
+
+    line-height: 1.6;
 }
 
 
-.details-button:hover {
-    background: var(--light);
+.location-icon {
+    flex-shrink: 0;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   VIEW LOCATION BUTTON
+======================================== */
+
+.location-button {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    background: var(--green);
+
+    color: #080808;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.location-button:hover {
+    background: var(--green-hover);
 
     transform: translateY(-2px);
+}
+
+
+.location-button span {
+    font-size: 13px;
 }
 
 
@@ -802,6 +798,7 @@ footer p {
     .gym-section,
     .suggest-section {
         padding-left: 5%;
+
         padding-right: 5%;
     }
 
@@ -820,15 +817,18 @@ footer p {
     }
 
 
-    .gym-image {
-        width: 38%;
+    .gym-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        min-width: 240px;
+
+    .gym-image {
+        height: 220px;
     }
 
 
     .gym-content {
-        padding: 30px;
+        padding: 25px 20px;
     }
 
 }
@@ -950,39 +950,36 @@ footer p {
     }
 
 
-    /* CARDS */
+    /* GYM CARDS */
+
+    .gym-cards {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
 
     .place-card {
-        flex-direction: column;
-
-        min-height: 0;
+        width: 100%;
     }
 
 
     .gym-image {
         width: 100%;
 
-        min-width: 0;
-
-        height: 240px;
-
-        min-height: 240px;
+        height: 230px;
     }
 
 
     .gym-image img {
         width: 100%;
 
-        height: 240px;
-
-        min-height: 240px;
-
-        object-fit: cover;
+        height: 230px;
     }
 
 
     .gym-content {
-        padding: 28px 25px;
+        padding: 25px;
     }
 
 
@@ -991,10 +988,8 @@ footer p {
     }
 
 
-    .details-button {
-        width: 100%;
-
-        text-align: center;
+    .location-box {
+        font-size: 12px;
     }
 
 
@@ -1071,15 +1066,11 @@ footer p {
 
     .gym-image {
         height: 210px;
-
-        min-height: 210px;
     }
 
 
     .gym-image img {
         height: 210px;
-
-        min-height: 210px;
     }
 
 }
