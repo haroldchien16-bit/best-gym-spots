@@ -98,7 +98,7 @@
                     rgba(0,0,0,.65),
                     rgba(0,0,0,.25)
                 ),
-                url("gb-botanica-gym-link-spaces-slough-1024x68.jpg");
+                url("gym1.jpg");
 
             background-size: cover;
             background-position: center;
@@ -242,6 +242,8 @@
             height: 210px;
 
             overflow: hidden;
+
+            background: #101010;
         }
 
         .gym-image img {
@@ -249,6 +251,8 @@
             height: 100%;
 
             object-fit: cover;
+
+            object-position: center;
 
             display: block;
 
@@ -604,6 +608,51 @@
 
         }
 
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .hero {
+                min-height: 400px;
+            }
+
+            .hero-content {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 55px 18px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .gym-image {
+                height: 220px;
+            }
+
+            .gym-content {
+                padding: 22px;
+            }
+
+            .gym-content h3 {
+                font-size: 22px;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -715,8 +764,8 @@
             <div class="gym-image">
 
                 <img
-                    src="gb-botanica-gym-link-spaces-slough-1024x68.jpg"
-                    alt="Gym workout area"
+                    src="gym1.jpg"
+                    alt="Anda Fitness Gym"
                 >
 
             </div>
@@ -763,8 +812,8 @@
             <div class="gym-image">
 
                 <img
-                    src="tips-for-home-gym-design-fostering-physical-fitness.jpg"
-                    alt="Gym equipment"
+                    src="gym2.jpg"
+                    alt="Manila Bulletin Gym"
                 >
 
             </div>
@@ -810,8 +859,8 @@
             <div class="gym-image">
 
                 <img
-                    src="gb-botanica-gym-link-spaces-slough-1024x68.jpg"
-                    alt="Fitness training area"
+                    src="gym3.jpg"
+                    alt="Gymnastics Association of the Philippines"
                 >
 
             </div>
@@ -855,7 +904,6 @@
 
     <!-- =========================
          SUGGEST A GYM
-         AT THE VERY BOTTOM
     ========================= -->
 
     <section class="suggest-section">
